@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>暮らしの小さなWebツール</title>
+<meta name="description" content="日常のちょっとした困りごとを、登録不要・インストール不要のWebツールで解決します。">
+<style>
+  :root {
+    --bg: #faf8f5;
+    --surface: #ffffff;
+    --text: #2b2520;
+    --text-muted: #6b6258;
+    --accent: #b5651d;
+    --border: #e8e2d8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1916;
+      --surface: #262220;
+      --text: #ede7df;
+      --text-muted: #a89d8f;
+      --accent: #e0995a;
+      --border: #3a342e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+    line-height: 1.7;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  h1 {
+    font-size: 1.6rem;
+    margin: 0 0 8px;
+  }
+  .tagline {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+  section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  section h2 {
+    font-size: 1rem;
+    margin: 0 0 12px;
+    color: var(--accent);
+  }
+  .tool-list {
+    display: grid;
+    gap: 12px;
+  }
+  .empty-state {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 16px 0;
+  }
+  .notice {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+  .notice ul {
+    margin: 8px 0 0;
+    padding-left: 1.2em;
+  }
+  footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>暮らしの小さなWebツール</h1>
+      <p class="tagline">日常のちょっとした困りごとを、登録不要・インストール不要のツールで解決します</p>
+    </header>
+
+    <section>
+      <h2>ツール一覧</h2>
+      <div class="tool-list">
+        <p class="empty-state">ただいま準備中です。公開でき次第、ここに追加していきます。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>このサイトについて</h2>
+      <p class="notice">
+        各ツールはAI（Claude）を使って企画・制作しています。使い方は各ツールのページに記載します。
+      </p>
+      <ul class="notice">
+        <li>ログイン・会員登録は不要です</li>
+        <li>入力したデータは端末の外に送信しません（ツールはすべてブラウザ内で完結します）</li>
+        <li>数値や制度に関する情報は、根拠のある出典がある場合のみ掲載します</li>
+      </ul>
+    </section>
+
+    <footer>
+      &copy; 2026 暮らしの小さなWebツール
+    </footer>
+  </div>
+</body>
+</html>
