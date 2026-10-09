@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>年賀状の一言文例｜暮らしの小さなWebツール</title>
+<meta name="description" content="相手を選ぶだけで、年賀状に添える一言が見つかります。登録不要・入力内容は端末の外に送りません。">
+<style>
+  :root {
+    --bg: #fffdf9;
+    --surface: #ffffff;
+    --text: #1f2430;
+    --text-muted: #5b6475;
+    --accent: #ff7a59;
+    --accent-strong: #c2410c;
+    --accent-soft: #fff1ea;
+    --mint: #12a594;
+    --mint-soft: #e6f7f4;
+    --sky-soft: #eaf4ff;
+    --border: #eee8e1;
+    --shadow: 0 1px 2px rgba(31, 36, 48, 0.04), 0 8px 24px rgba(31, 36, 48, 0.06);
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+    font-size: 1rem;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    word-break: auto-phrase;
+    overflow-wrap: anywhere;
+  }
+  button { font: inherit; color: inherit; }
+  a { color: var(--accent-strong); }
+  :focus-visible {
+    outline: 3px solid var(--accent-strong);
+    outline-offset: 2px;
+  }
+
+  /* ヘッダー */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 16px 72px;
+    text-align: center;
+    background:
+      radial-gradient(circle at 15% 20%, #ffe3d6 0, transparent 45%),
+      radial-gradient(circle at 85% 15%, #d9f3ee 0, transparent 40%),
+      radial-gradient(circle at 70% 90%, #e3efff 0, transparent 45%),
+      var(--bg);
+  }
+  .hero-nav {
+    max-width: 640px;
+    margin: 0 auto 20px;
+    text-align: left;
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 4px;
+    font-size: 1rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .back-link:hover { text-decoration: underline; }
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #0b7a6d;
+  }
+  .badge::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--mint);
+  }
+  .badge.ai { color: var(--accent-strong); }
+  .badge.ai::before { background: var(--accent); }
+  h1 {
+    font-size: clamp(1.7rem, 6vw, 2.4rem);
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    margin: 0 0 12px;
+    font-weight: 800;
+  }
+  .tagline {
+    max-width: 30em;
+    margin: 0 auto;
+    color: var(--text-muted);
+    font-size: 1rem;
+    text-wrap: balance;
+  }
+
+  /* 本文 */
+  .wrap {
+    max-width: 640px;
+    margin: -44px auto 0;
+    padding: 0 16px 40px;
+    position: relative;
+  }
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px 18px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  .step-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    margin: 0 0 4px;
+  }
+  .step-num {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .step-desc {
+    margin: 0 0 14px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  /* 紹介文（ツール本体の上。詳しい内容は折りたたみ） */
+  .intro { padding: 18px 18px 8px; }
+  .intro-title {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin: 0 0 6px;
+  }
+  .intro-lead {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    color: var(--text-muted);
+  }
+  .intro details { border-top: 1px solid var(--border); }
+  .intro summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 48px;
+    padding: 4px 2px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-strong);
+    cursor: pointer;
+    list-style: none;
+  }
+  .intro summary::-webkit-details-marker { display: none; }
+  .intro summary::after {
+    content: "";
+    flex: none;
+    width: 9px;
+    height: 9px;
+    margin-right: 6px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg) translateY(-3px);
+    transition: transform .15s;
+  }
+  .intro details[open] > summary::after { transform: rotate(-135deg) translateY(-3px); }
+  .intro-body { padding: 0 2px 14px; }
+  .intro-body h3 {
+    font-size: 1rem;
+    margin: 10px 0 4px;
+  }
+  .intro-body h3:first-child { margin-top: 0; }
+  .intro-body ul,
+  .intro-body ol {
+    margin: 0;
+    padding-left: 1.4em;
+    color: var(--text-muted);
+    font-size: 1rem;
+  }
+  .intro-body li + li { margin-top: 4px; }
+  .faq { margin: 0; }
+  .faq dt {
+    margin: 12px 0 2px;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .faq dt:first-child { margin-top: 0; }
+  .faq dd {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+  }
+
+  /* 相手チップ */
+  .chips-who {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .chip-who {
+    min-height: 56px;
+    padding: 8px 10px;
+    border-radius: 14px;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color .15s, border-color .15s;
+  }
+  .chip-who:hover { border-color: #f3c9b8; }
+  .chip-who[aria-pressed="true"] {
+    background: var(--accent-soft);
+    border-color: var(--accent-strong);
+    color: var(--accent-strong);
+    font-weight: 700;
+  }
+
+  /* 近況チップ */
+  .chips-news {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .chip-news {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    font-size: 1rem;
+    line-height: 1.3;
+    cursor: pointer;
+    transition: background-color .15s, border-color .15s;
+  }
+  .chip-news:hover { border-color: #b9e5dd; }
+  .chip-news[aria-pressed="true"] {
+    background: var(--mint-soft);
+    border-color: var(--mint);
+    color: #0b6b60;
+    font-weight: 700;
+  }
+
+  #step2 { scroll-margin-top: 12px; }
+
+  /* 結果 */
+  .results-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    margin: 0 0 6px;
+    scroll-margin-top: 12px;
+  }
+  .results-head::before {
+    content: "";
+    width: 6px;
+    height: 1.2em;
+    border-radius: 3px;
+    background: linear-gradient(var(--accent), #ffb26b);
+  }
+  .note-small {
+    margin: 0 0 14px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  .placeholder {
+    margin: 0;
+    padding: 28px 18px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1rem;
+    background: var(--surface);
+    border: 2px dashed #f3d9cc;
+    border-radius: 18px;
+  }
+  .cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 14px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: var(--shadow);
+  }
+  /* 「ほかの案を見る」で入れ替わったことが分かるように */
+  .cards.is-refreshed .card { animation: card-in 0.35s ease-out both; }
+  .cards.is-refreshed .card:nth-child(2) { animation-delay: 0.06s; }
+  .cards.is-refreshed .card:nth-child(3) { animation-delay: 0.12s; }
+  @keyframes card-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+  .card-text {
+    margin: 0 0 6px;
+    font-size: 1rem;
+    line-height: 1.85;
+    -webkit-user-select: text;
+    user-select: text;
+  }
+  .card-count {
+    margin: 0 0 12px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: right;
+  }
+  .btn-copy {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    border: none;
+    border-radius: 12px;
+    background: var(--accent-strong);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color .15s;
+  }
+  .btn-copy:hover { background: #a8380a; }
+  .btn-copy.is-done { background: #0b7a6d; }
+  .copy-error {
+    margin: 8px 0 0;
+    font-size: 0.9rem;
+    color: var(--accent-strong);
+  }
+  .btn-more {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    margin-top: 16px;
+    border-radius: 12px;
+    background: var(--surface);
+    border: 1.5px solid var(--accent);
+    color: var(--accent-strong);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .btn-more:hover { background: var(--accent-soft); }
+  /* 収益（設定されたときだけ表示） */
+  .support {
+    text-align: center;
+    margin: 28px 0 0;
+  }
+  .support p {
+    margin: 0 0 8px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+  .btn-donate {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 6px 20px;
+    border-radius: 999px;
+    border: 1.5px solid var(--accent);
+    color: var(--accent-strong);
+    background: var(--surface);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .btn-donate:hover { background: var(--accent-soft); }
+  .affiliate {
+    margin-top: 24px;
+    padding: 16px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+  }
+  .affiliate h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 8px;
+    font-size: 1rem;
+  }
+  .pr {
+    display: inline-block;
+    padding: 0 8px;
+    border-radius: 6px;
+    border: 1px solid var(--text-muted);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+  .affiliate ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+  .affiliate a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 1rem;
+  }
+
+  /* 注意書き */
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    margin: 0 0 12px;
+  }
+  .section-title::before {
+    content: "";
+    width: 6px;
+    height: 1.2em;
+    border-radius: 3px;
+    background: linear-gradient(var(--accent), #ffb26b);
+  }
+  .about {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 22px 20px;
+    box-shadow: var(--shadow);
+  }
+  .about p {
+    margin: 0 0 12px;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+  .about ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 8px;
+  }
+  .about li {
+    position: relative;
+    padding-left: 1.6em;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+  .about li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--mint);
+    font-weight: 700;
+  }
+  .notes-section { margin-top: 36px; }
+
+  footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    padding: 8px 16px 40px;
+  }
+  footer p { margin: 0 0 6px; }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 16px;
+    margin: 0 0 6px;
+    padding: 0;
+    list-style: none;
+  }
+  .footer-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--text-muted);
+  }
+
+  .noscript {
+    margin: 0 0 20px;
+    padding: 16px;
+    border-radius: 14px;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    font-weight: 700;
+    text-align: center;
+  }
+  .sr-only {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0);
+    white-space: nowrap; border: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="hero-nav" aria-label="サイト内">
+      <a class="back-link" href="../index.html">&larr; 暮らしの小さなWebツール トップへ</a>
+    </nav>
+    <div class="badges">
+      <span class="badge">無料・登録不要</span>
+      <span class="badge ai">AI（Claude）で作成</span>
+    </div>
+    <h1>年賀状の一言文例</h1>
+    <p class="tagline">相手を選ぶだけで、印刷した年賀状に手書きで添える一言の候補が見つかります</p>
+  </header>
+
+  <main class="wrap">
+    <noscript>
+      <p class="noscript">このツールはJavaScriptが必要です。ブラウザの設定でJavaScriptを有効にしてください。</p>
+    </noscript>
+
+    <section class="panel intro" aria-labelledby="intro-title">
+      <h2 class="intro-title" id="intro-title">年賀状に添える一言、相手を選ぶだけで見つかります</h2>
+      <p class="intro-lead">印刷した年賀状に手書きで添える一言文例です。上司、恩師、親戚、友人など、相手に合わせた候補が3件ずつ出ます。登録は不要で、無料で使えます。</p>
+      <details>
+        <summary>こんな時に使えます・使い方</summary>
+        <div class="intro-body">
+          <h3>こんな時に使えます</h3>
+          <ul>
+            <li>上司や取引先への年賀状に、失礼のない範囲で何を添えるか迷ったとき</li>
+            <li>疎遠になっている友人や親戚に、ひとことだけ添えたいとき</li>
+            <li>結婚・出産・引っ越しなどを、さらりと知らせたいとき</li>
+          </ul>
+          <h3>使い方</h3>
+          <ol>
+            <li>送る相手を選びます（8種類）。</li>
+            <li>知らせたい近況があれば選びます（なしでも使えます）。</li>
+            <li>気に入った文の「コピー」を押して、年賀状アプリやメモに貼り付けます。合わなければ「ほかの案を見る」で入れ替えられます。</li>
+          </ol>
+        </div>
+      </details>
+      <details>
+        <summary>よくある質問</summary>
+        <div class="intro-body">
+          <dl class="faq">
+            <dt>Q. 入力した内容はどこかに送られますか？</dt>
+            <dd>A. 送られません。このツールはブラウザの中だけで動き、選んだ内容は端末の外に出ません。氏名や住所を入力する欄もありません。</dd>
+            <dt>Q. 文例は誰が書いたものですか？</dt>
+            <dd>A. このツールはAI（Claude）と一緒に企画・制作しており、文例もAIが書き下ろしたものです。他のサイトや文例集からの転載ではありません。</dd>
+            <dt>Q. そのまま使って大丈夫ですか？</dt>
+            <dd>A. 文は目安です。相手との関係に合わせて、言葉を足したり変えたりしてお使いください。</dd>
+          </dl>
+        </div>
+      </details>
+    </section>
+
+    <section class="panel" aria-labelledby="step1-title">
+      <h2 class="step-title" id="step1-title"><span class="step-num">STEP1</span>誰に送りますか？</h2>
+      <p class="step-desc">選ぶとすぐに候補が出ます</p>
+      <div class="chips-who" id="chips-who" role="group" aria-labelledby="step1-title"></div>
+    </section>
+
+    <section class="panel" id="step2" aria-labelledby="step2-title">
+      <h2 class="step-title" id="step2-title"><span class="step-num">STEP2</span>近況を添える？</h2>
+      <p class="step-desc">任意です。選ぶと一言に近況の一文が加わります（もう一度押すと解除）</p>
+      <div class="chips-news" id="chips-news" role="group" aria-labelledby="step2-title"></div>
+    </section>
+
+    <section aria-labelledby="results-title">
+      <h2 class="results-head" id="results-title" tabindex="-1">一言の候補</h2>
+      <p class="note-small">文は目安です。相手との関係に合わせて言葉を変えてお使いください。</p>
+      <p class="placeholder" id="placeholder">相手を選ぶと、一言の候補が出ます</p>
+      <ul class="cards" id="cards" hidden></ul>
+      <div id="result-actions" hidden>
+        <button type="button" class="btn-more" id="btn-more">ほかの案を見る</button>
+      </div>
+
+      <!-- 投げ銭：DONATE_URL が空のときは表示しない -->
+      <div class="support" id="support" hidden>
+        <p>役に立ったら、応援をお願いします</p>
+        <a class="btn-donate" id="donate-link" href="#" target="_blank" rel="noopener noreferrer">応援する</a>
+      </div>
+
+      <!-- 関連リンク：AFFILIATE_LINKS が空のときは表示しない -->
+      <aside class="affiliate" id="affiliate" aria-labelledby="affiliate-title" hidden>
+        <h2 id="affiliate-title"><span class="pr">PR</span>年賀状の準備に</h2>
+        <ul id="affiliate-list"></ul>
+      </aside>
+    </section>
+
+    <section class="notes-section" aria-labelledby="notes-title">
+      <h2 class="section-title" id="notes-title">使い方と注意書き</h2>
+      <div class="about">
+        <p>相手を選ぶと一言の候補が3件出ます。気に入った文の［コピー］を押して、年賀状アプリやメモに貼り付けてお使いください。「ほかの案を見る」で別の候補に入れ替わります。</p>
+        <ul>
+          <li>このツールはAI（Claude）を使って企画・制作しています。文例もAIが書き下ろしたものです。</li>
+          <li>入力・選択した内容は端末の外に送信しません。ブラウザの中だけで動きます。</li>
+          <li>文は目安です。相手との関係に合わせて言葉を変えてお使いください。</li>
+          <li>喪中の方へ年賀状を送るかどうかは、一般的には控えるものとされています。相手の事情に合わせてご判断ください。</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="sr-only" aria-live="polite" id="live"></div>
+  </main>
+
+  <footer>
+    <p>このツールはAI（Claude）と一緒に作り、人が確認して公開しています</p>
+    <ul class="footer-links">
+      <li><a href="../index.html">トップページ</a></li>
+      <li id="operator-item" hidden><a id="operator-link" href="#">運営者</a></li>
+      <li id="privacy-item" hidden><a id="privacy-link" href="#">プライバシーポリシー</a></li>
+    </ul>
+    <p>&copy; 2026 暮らしの小さなWebツール</p>
+  </footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ===== 設定（オーナーが決めたら値を入れる。空のままなら表示しない） ===== */
+  // 投げ銭の遷移先URL（例：Ofuse、Buy Me a Coffee 等）
+  const DONATE_URL = "";
+  // 関連リンク（アフィリエイト）。例：{ label: "表示名", url: "リンク先" }
+  const AFFILIATE_LINKS = [];
+  // 運営者・プライバシーポリシーのページ（用意できたら相対パスを入れる）
+  const OPERATOR_URL = "";
+  const PRIVACY_URL = "";
+
+  /* ===== 文例データ（仕様書 第8章のとおり） ===== */
+  const CATEGORIES = {
+    boss: {
+      label: "上司・取引先",
+      tone: "polite",
+      texts: [
+        "昨年は大変お世話になりました。本年もご指導のほどよろしくお願いいたします。",
+        "旧年中は温かいご支援をいただき、ありがとうございました。本年もよろしくお願い申し上げます。",
+        "昨年は多くのことを学ばせていただきました。本年も精進してまいります。",
+        "日頃のご厚情に感謝申し上げます。本年も変わらぬご指導をお願いいたします。",
+        "昨年はお力添えをいただき、心より感謝しております。本年もどうぞよろしくお願いいたします。",
+        "本年も一層努めてまいります。ご指導ご鞭撻のほど、よろしくお願い申し上げます。",
+        "皆さまのご健康とご多幸を心よりお祈りいたします。本年もよろしくお願いいたします。",
+        "昨年は何かとお心遣いをいただき、ありがとうございました。本年もご縁を大事にしてまいります。"
+      ]
+    },
+    teacher: {
+      label: "恩師・先生",
+      tone: "polite",
+      texts: [
+        "ご無沙汰しております。先生のご指導を思い出しながら、日々励んでおります。",
+        "先生はお変わりなくお過ごしでしょうか。本年もご健康でお過ごしください。",
+        "学生時代のご指導に、今も感謝しております。本年もよろしくお願いいたします。",
+        "おかげさまで元気に過ごしております。またお目にかかれる日を楽しみにしています。",
+        "先生の教えを胸に、本年も頑張ります。どうぞお体をいたわってお過ごしください。",
+        "ご無沙汰ばかりで申し訳ございません。本年もご健勝でお過ごしください。",
+        "いつも温かく見守ってくださり、ありがとうございます。本年も精一杯努めます。",
+        "お変わりございませんか。機会がありましたら、ぜひお会いしたいです。"
+      ]
+    },
+    relative: {
+      label: "親戚",
+      tone: "polite",
+      texts: [
+        "昨年はお世話になりました。皆さまお元気でお過ごしでしょうか。本年もよろしくお願いします。",
+        "ご無沙汰していますが、家族一同元気にしています。今年は顔を見せに行きたいと思っています。",
+        "寒い日が続きますので、どうぞお体に気をつけてお過ごしください。",
+        "いつも気にかけていただき、ありがとうございます。本年も家族ともどもよろしくお願いします。",
+        "皆さまにとって、笑顔あふれる一年になりますようお祈りしています。",
+        "近いうちにお会いできるのを楽しみにしています。お近くにお越しの際はぜひお立ち寄りください。",
+        "昨年は何かとお世話になり、ありがとうございました。本年もよろしくお願いします。",
+        "お変わりありませんか。落ち着いたらゆっくりお話ししたいです。"
+      ]
+    },
+    inlaw: {
+      label: "義理の実家（配偶者の親・親族）",
+      tone: "polite",
+      texts: [
+        "昨年はいろいろとお心遣いをいただき、ありがとうございました。本年もよろしくお願いいたします。",
+        "皆さまお変わりなくお過ごしでしょうか。本年もどうぞよろしくお願いいたします。",
+        "日頃のご親切に心より感謝しております。寒さの折、どうぞご自愛ください。",
+        "なかなかお伺いできず申し訳ありません。落ち着きましたら、ぜひご挨拶に参ります。",
+        "おかげさまで家族そろって元気に過ごしております。本年もよろしくお願いいたします。",
+        "いつも温かく迎えていただき、ありがとうございます。今年も楽しみにしております。",
+        "皆さまにとって健やかで穏やかな一年となりますようお祈り申し上げます。",
+        "昨年は大変お世話になりました。本年も変わらぬお付き合いをお願いいたします。"
+      ]
+    },
+    friend: {
+      label: "友人",
+      tone: "casual",
+      texts: [
+        "今年もよろしくね！また近いうちにごはんでも行こう。",
+        "昨年はいろいろ助けてもらってありがとう。今年も楽しい一年にしようね。",
+        "元気にしてる？今年こそ会おう！連絡待ってるね。",
+        "今年も笑って過ごせる一年になりますように。変わらず仲良くしてね。",
+        "あなたと話すと元気が出るよ。今年もたくさん遊ぼうね。",
+        "お互い忙しいけど、時間を作って会おうね。今年もよろしく！",
+        "昨年は楽しい思い出をありがとう。今年もよろしくね。",
+        "今年は旅行に行きたいね！そろそろ計画を立てよう。"
+      ]
+    },
+    colleague: {
+      label: "同僚・後輩",
+      tone: "casual",
+      texts: [
+        "昨年はありがとう。今年も一緒に頑張ろうね。",
+        "いつも助けてくれてありがとう。今年もよろしくね。",
+        "今年も楽しく仕事ができたらうれしいな。よろしくね。",
+        "昨年は本当に頼りになったよ。今年も力を合わせていこう。",
+        "たまにはごはんに行こうね！今年もよろしく。",
+        "今年はお互いに良い年にしようね。引き続きよろしく。",
+        "いつも刺激をもらっています。今年も一緒に頑張ろう。",
+        "体調に気をつけて、今年も元気にいこうね。"
+      ]
+    },
+    longtime: {
+      label: "久しぶりの人・疎遠な人",
+      tone: "polite",
+      texts: [
+        "ご無沙汰しております。お元気でお過ごしでしょうか。本年もよろしくお願いします。",
+        "なかなかご連絡できずにいましたが、年賀状でお便りできてうれしいです。",
+        "昔のことを懐かしく思い出しています。いつかゆっくりお会いしたいですね。",
+        "おかげさまで私は元気にしています。お変わりありませんか。",
+        "毎年の年賀状が楽しみです。今年もよろしくお願いします。",
+        "お元気ですか。機会があれば、ぜひ近況を聞かせてください。",
+        "長らくご無沙汰しておりました。本年もよろしくお願いします。",
+        "お会いできる日を楽しみに、今年も元気に過ごします。"
+      ]
+    },
+    neighbor: {
+      label: "ご近所・ママ友",
+      tone: "polite",
+      texts: [
+        "昨年はいろいろとお世話になりました。本年もよろしくお願いします。",
+        "いつも声をかけてくださり、ありがとうございます。今年も仲良くしてください。",
+        "ご近所の皆さまのおかげで、安心して過ごせています。今年もどうぞよろしくお願いします。",
+        "お近くですので、お気軽に声をかけてください。本年もよろしくお願いします。",
+        "ご家族皆さまが健やかに過ごせる一年になりますように。",
+        "おかげさまで毎日楽しく過ごしています。今年もよろしくお願いします。",
+        "町内のことなどでもお世話になりました。本年もお力添えをお願いします。",
+        "また今年もお茶でもしましょう。ゆっくりお話しできるのを楽しみにしています。"
+      ]
+    }
+  };
+  const CATEGORY_ORDER = ["boss", "teacher", "relative", "inlaw", "friend", "colleague", "longtime", "neighbor"];
+
+  const NEWS = {
+    marriage: {
+      label: "結婚",
+      polite: ["結婚いたしました。二人で力を合わせて歩んでまいります。", "入籍し、新しい生活が始まりました。"],
+      casual: ["結婚しました！二人で楽しく過ごしています。", "入籍して、新しい生活が始まりました。"]
+    },
+    baby: {
+      label: "子どもが生まれた",
+      polite: ["家族が一人増え、家の中がにぎやかになりました。", "子どもが生まれました。日々の成長が楽しみです。"],
+      casual: ["家族が増えました！毎日にぎやかです。", "子どもが生まれました。毎日バタバタだけど幸せです。"]
+    },
+    move: {
+      label: "引っ越し",
+      polite: ["引っ越しました。新しい土地での暮らしにも慣れてきました。", "転居し、新しい住まいで暮らし始めました。"],
+      casual: ["引っ越しました！新しい部屋が気に入っています。", "新しい町での生活にも慣れてきたよ。"]
+    },
+    job: {
+      label: "転職・異動",
+      polite: ["新しい職場で働き始め、日々勉強しております。", "部署が変わり、新たな気持ちで取り組んでおります。"],
+      casual: ["転職して新しい仕事を始めました。毎日勉強中です。", "部署が変わって、新しい気持ちで頑張っています。"]
+    },
+    school: {
+      label: "子どもの進学",
+      polite: ["子どもが進学し、新しい環境で頑張っております。", "子どもが入学し、親子で新しい生活に慣れてきたところです。"],
+      casual: ["子どもが進学して、新しい生活が始まったよ。", "子どもの成長が早くてびっくりしています。"]
+    }
+  };
+  const NEWS_ORDER = ["marriage", "baby", "move", "job", "school"];
+
+  const PAGE_SIZE = 3;
+
+  /* ===== ロジック（純粋関数） ===== */
+
+  // Fisher–Yates で 0..n-1 の並びを作る
+  function shuffledOrder(n, rand) {
+    rand = rand || Math.random;
+    const a = [];
+    for (let i = 0; i < n; i++) a.push(i);
+    for (let i = n - 1; i > 0; i--) {
+      const j = Math.floor(rand() * (i + 1));
+      const t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  // ページ数（8件なら3ページ：3＋3＋2）
+  function pageCount(n) {
+    return Math.ceil(n / PAGE_SIZE);
+  }
+
+  // order の page 番目の3件の添字。最後のページは先頭から補って必ず3件にする
+  function pageIndices(order, page) {
+    const out = [];
+    const start = page * PAGE_SIZE;
+    for (let k = 0; k < PAGE_SIZE; k++) {
+      const pos = start + k;
+      out.push(order[pos < order.length ? pos : (pos - order.length) % order.length]);
+    }
+    return out;
+  }
+
+  // 候補文の組み立て：〔近況文〕＋本文。近況文は A, B, A の順
+  function buildCandidates(catKey, newsKey, order, page) {
+    const cat = CATEGORIES[catKey];
+    const idx = pageIndices(order, page);
+    const newsList = newsKey && NEWS[newsKey] ? NEWS[newsKey][cat.tone] : null;
+    return idx.map(function (ti, k) {
+      return joinNews(newsList ? newsList[k % 2] : "", cat.texts[ti]);
+    });
+  }
+
+  // 本文が「ご無沙汰」「お変わり」などのあいさつで始まるときは、近況をあいさつの後ろに入れる
+  const GREETING_HEAD = /^(?:(?:長らく)?ご無沙汰|お変わり|お元気|先生はお変わり)[^。？]*[。？]/;
+  function joinNews(news, text) {
+    if (!news) return text;
+    const m = text.match(GREETING_HEAD);
+    return m ? m[0] + news + text.slice(m[0].length) : news + text;
+  }
+
+  // 文字数（句読点含む。サロゲートペアも1文字）
+  function charCount(s) {
+    return Array.from(s).length;
+  }
+
+  // URLパラメータから選択状態を読む。不正値は無視
+  function parseParams(search) {
+    const p = new URLSearchParams(search);
+    const c = p.get("c");
+    const n = p.get("n");
+    const cat = c && Object.prototype.hasOwnProperty.call(CATEGORIES, c) ? c : null;
+    const news = cat && n && Object.prototype.hasOwnProperty.call(NEWS, n) ? n : null;
+    return { cat: cat, news: news };
+  }
+
+  function buildSearch(cat, news) {
+    if (!cat) return "";
+    const p = new URLSearchParams();
+    p.set("c", cat);
+    if (news) p.set("n", news);
+    return "?" + p.toString();
+  }
+
+  /* ===== 状態 ===== */
+  const state = { cat: null, news: null, order: [], page: 0 };
+
+  /* ===== DOM ===== */
+  const $ = function (id) { return document.getElementById(id); };
+  const chipsWho = $("chips-who");
+  const chipsNews = $("chips-news");
+  const placeholder = $("placeholder");
+  const cards = $("cards");
+  const resultActions = $("result-actions");
+  const btnMore = $("btn-more");
+  const live = $("live");
+  const resultsTitle = $("results-title");
+  const support = $("support");
+  const affiliate = $("affiliate");
+
+  function announce(msg) {
+    live.textContent = "";
+    setTimeout(function () { live.textContent = msg; }, 50);
+  }
+
+  function renderChips() {
+    CATEGORY_ORDER.forEach(function (key) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "chip-who";
+      b.dataset.key = key;
+      b.textContent = CATEGORIES[key].label;
+      b.setAttribute("aria-pressed", "false");
+      b.addEventListener("click", function () { selectCat(key); });
+      chipsWho.appendChild(b);
+    });
+    const none = document.createElement("button");
+    none.type = "button";
+    none.className = "chip-news";
+    none.dataset.key = "";
+    none.textContent = "なし";
+    none.setAttribute("aria-pressed", "true");
+    none.addEventListener("click", function () { selectNews(null); });
+    chipsNews.appendChild(none);
+    NEWS_ORDER.forEach(function (key) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "chip-news";
+      b.dataset.key = key;
+      b.textContent = NEWS[key].label;
+      b.setAttribute("aria-pressed", "false");
+      b.addEventListener("click", function () {
+        selectNews(state.news === key ? null : key);
+      });
+      chipsNews.appendChild(b);
+    });
+  }
+
+  function syncChips() {
+    chipsWho.querySelectorAll("button").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.dataset.key === state.cat));
+    });
+    chipsNews.querySelectorAll("button").forEach(function (b) {
+      const key = b.dataset.key || null;
+      b.setAttribute("aria-pressed", String(key === state.news));
+    });
+  }
+
+  function updateUrl() {
+    try {
+      const url = location.pathname + buildSearch(state.cat, state.news) + location.hash;
+      history.replaceState(null, "", url);
+    } catch (e) { /* file:// などで失敗しても動作は続ける */ }
+  }
+
+  function resetOrder() {
+    state.order = shuffledOrder(CATEGORIES[state.cat].texts.length);
+    state.page = 0;
+  }
+
+  function renderResults() {
+    const has = !!state.cat;
+    cards.classList.remove("is-refreshed");
+    placeholder.hidden = has;
+    cards.hidden = !has;
+    resultActions.hidden = !has;
+    renderMonetize(has);
+    cards.textContent = "";
+    if (!has) return;
+    const list = buildCandidates(state.cat, state.news, state.order, state.page);
+    list.forEach(function (text, i) {
+      const li = document.createElement("li");
+      li.className = "card";
+      const p = document.createElement("p");
+      p.className = "card-text";
+      p.id = "cand-" + i;
+      p.textContent = text;
+      const cnt = document.createElement("p");
+      cnt.className = "card-count";
+      cnt.textContent = charCount(text) + "文字";
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "btn-copy";
+      btn.textContent = "コピー";
+      btn.setAttribute("aria-label", "候補" + (i + 1) + "をコピー");
+      btn.setAttribute("aria-describedby", p.id);
+      const err = document.createElement("p");
+      err.className = "copy-error";
+      err.hidden = true;
+      btn.addEventListener("click", function () { onCopy(text, btn, err); });
+      li.appendChild(p);
+      li.appendChild(cnt);
+      li.appendChild(btn);
+      li.appendChild(err);
+      cards.appendChild(li);
+    });
+  }
+
+  function renderMonetize(show) {
+    support.hidden = !(show && DONATE_URL);
+    if (DONATE_URL) $("donate-link").href = DONATE_URL;
+    const ok = show && Array.isArray(AFFILIATE_LINKS) && AFFILIATE_LINKS.length > 0;
+    affiliate.hidden = !ok;
+    if (ok && !$("affiliate-list").childElementCount) {
+      AFFILIATE_LINKS.forEach(function (l) {
+        if (!l || !l.url || !l.label) return;
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = l.url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer sponsored";
+        a.textContent = l.label;
+        li.appendChild(a);
+        $("affiliate-list").appendChild(li);
+      });
+    }
+  }
+
+  function scrollToResults() {
+    const rect = resultsTitle.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    // 最初のコピーボタンまで見えていれば動かさない
+    const firstBtn = cards.querySelector(".btn-copy");
+    const bottom = firstBtn ? firstBtn.getBoundingClientRect().bottom : rect.bottom;
+    if (rect.top >= 0 && bottom <= vh) return;
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    resultsTitle.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+  }
+
+  // STEP1 のあとは STEP2 が見える位置まで（結果まで飛ばさない）
+  function scrollToStep2() {
+    const step2 = $("step2");
+    const rect = step2.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.top >= 0 && rect.bottom <= vh) return;
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    step2.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+  }
+
+  function selectCat(key) {
+    state.cat = key;
+    resetOrder();
+    syncChips();
+    updateUrl();
+    renderResults();
+    announce(CATEGORIES[key].label + "向けの候補を3件表示しました");
+    scrollToStep2();
+  }
+
+  function selectNews(key) {
+    state.news = key;
+    syncChips();
+    if (state.cat) {
+      resetOrder();
+      updateUrl();
+      renderResults();
+      announce((key ? "近況「" + NEWS[key].label + "」を付けた" : "近況なしの") + "候補を表示しました");
+      scrollToResults();
+    } else {
+      updateUrl();
+      announce(key ? "近況「" + NEWS[key].label + "」を選びました。相手を選ぶと候補が出ます" : "近況なしにしました");
+    }
+  }
+
+  function onMore() {
+    if (!state.cat) return;
+    state.page++;
+    if (state.page >= pageCount(state.order.length)) resetOrder();
+    renderResults();
+    announce("別の候補を3件表示しました");
+    // 入れ替わった候補の先頭へ戻し、カードを軽く出し直す
+    void cards.offsetWidth;
+    cards.classList.add("is-refreshed");
+    scrollToResults();
+  }
+
+  /* ===== コピー ===== */
+  function fallbackCopy(text) {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.top = "0";
+    ta.style.left = "0";
+    ta.style.opacity = "0";
+    ta.style.fontSize = "16px";
+    document.body.appendChild(ta);
+    const prevFocus = document.activeElement;
+    ta.select();
+    ta.setSelectionRange(0, text.length);
+    let ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    if (prevFocus && prevFocus.focus) prevFocus.focus();
+    return ok;
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).then(
+        function () { return true; },
+        function () { return fallbackCopy(text); }
+      );
+    }
+    return Promise.resolve(fallbackCopy(text));
+  }
+
+  function onCopy(text, btn, err) {
+    copyText(text).then(function (ok) {
+      if (ok) {
+        err.hidden = true;
+        btn.textContent = "コピーしました";
+        btn.classList.add("is-done");
+        announce("コピーしました");
+        clearTimeout(btn._t);
+        btn._t = setTimeout(function () {
+          btn.textContent = "コピー";
+          btn.classList.remove("is-done");
+        }, 2000);
+      } else {
+        const msg = "コピーできませんでした。文を長押ししてコピーしてください";
+        err.textContent = msg;
+        err.hidden = false;
+        announce(msg);
+      }
+    });
+  }
+
+  /* ===== フッターのリンク（設定されたときだけ表示） ===== */
+  function renderFooterLinks() {
+    if (OPERATOR_URL) { $("operator-link").href = OPERATOR_URL; $("operator-item").hidden = false; }
+    if (PRIVACY_URL) { $("privacy-link").href = PRIVACY_URL; $("privacy-item").hidden = false; }
+  }
+
+  /* ===== 初期化 ===== */
+  function init() {
+    renderChips();
+    renderFooterLinks();
+    btnMore.addEventListener("click", onMore);
+    const sel = parseParams(location.search);
+    state.news = sel.news;
+    if (sel.cat) {
+      state.cat = sel.cat;
+      resetOrder();
+    }
+    syncChips();
+    updateUrl();
+    renderResults();
+  }
+
+  // テスト用に純粋関数を公開（動作には影響しない）
+  window.__nenga = {
+    CATEGORIES: CATEGORIES, NEWS: NEWS, shuffledOrder: shuffledOrder, pageIndices: pageIndices,
+    pageCount: pageCount, buildCandidates: buildCandidates, charCount: charCount,
+    parseParams: parseParams, buildSearch: buildSearch
+  };
+
+  init();
+})();
+</script>
+</body>
+</html>
