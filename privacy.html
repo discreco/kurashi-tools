@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>プライバシーポリシー｜暮らしの小さなWebツール</title>
+<meta name="description" content="暮らしの小さなWebツールのプライバシーポリシー。入力内容は外部に送信せず、Cookie・アクセス解析・広告は使っていません。">
+<style>
+  :root {
+    --bg: #fffdf9;
+    --surface: #ffffff;
+    --text: #1f2430;
+    --text-muted: #5b6475;
+    --accent: #ff7a59;
+    --accent-strong: #c2410c;
+    --accent-soft: #fff1ea;
+    --mint: #12a594;
+    --mint-soft: #e6f7f4;
+    --sky-soft: #eaf4ff;
+    --border: #eee8e1;
+    --shadow: 0 1px 2px rgba(31, 36, 48, 0.04), 0 8px 24px rgba(31, 36, 48, 0.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    word-break: auto-phrase;
+    overflow-wrap: anywhere;
+  }
+  a { color: var(--accent-strong); }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+  .page-head {
+    padding: 16px 16px 40px;
+    background:
+      radial-gradient(circle at 15% 20%, #ffe3d6 0, transparent 45%),
+      radial-gradient(circle at 85% 15%, #d9f3ee 0, transparent 40%),
+      var(--bg);
+  }
+  .page-head-inner { max-width: 760px; margin: 0 auto; }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 4px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .back:hover { text-decoration: underline; }
+  h1 {
+    font-size: clamp(1.5rem, 5.5vw, 2.2rem);
+    line-height: 1.35;
+    letter-spacing: 0.02em;
+    margin: 20px 0 8px;
+    font-weight: 800;
+  }
+  .lead { margin: 0; color: var(--text-muted); }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 16px 48px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  .card h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    margin: 0 0 10px;
+  }
+  .card h2::before {
+    content: "";
+    flex: none;
+    width: 6px;
+    height: 1.2em;
+    border-radius: 3px;
+    background: linear-gradient(var(--accent), #ffb26b);
+  }
+  .card p { margin: 0 0 10px; }
+  .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+  .card ul { margin: 0 0 10px; padding-left: 1.3em; }
+  .card li { margin-bottom: 6px; }
+  .muted { color: var(--text-muted); }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: var(--accent-strong);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    max-width: 100%;
+    text-align: center;
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .notice {
+    margin: 0;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    font-weight: 600;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    padding: 24px 16px 40px;
+  }
+  footer p { margin: 0; }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 16px;
+    margin: 0 0 6px;
+    padding: 0;
+    list-style: none;
+  }
+  .footer-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 1rem;
+    color: var(--text-muted);
+  }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+</style>
+</head>
+<body>
+  <header class="page-head">
+    <div class="page-head-inner">
+      <a class="back" href="index.html">← トップへ</a>
+      <h1>プライバシーポリシー</h1>
+      <p class="lead">暮らしの小さなWebツール（以下「このサイト」）での情報の取り扱いについて</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card" aria-labelledby="h-input">
+      <h2 id="h-input">ツールに入力・選択した内容</h2>
+      <p>ツールに入力・選択した内容は、お使いのブラウザの中だけで処理します。運営者を含め、外部には送信しません。サーバーに保存することもありません。</p>
+      <p>なお、お問い合わせフォームに入力した内容は、下記「外部サービスについて」のとおりGoogleのサービスに送信されます。</p>
+    </section>
+
+    <section class="card" aria-labelledby="h-url">
+      <h2 id="h-url">ページのURL（アドレス）について</h2>
+      <p>ツールによっては、選んだ内容がページのURL（アドレス）に入ることがあります。これは、ページを開き直したときに同じ状態で表示するためです。</p>
+      <p>そのURLを人に送ったり、SNSに貼ったりすると、選んだ内容が相手にも伝わります。共有するときはご注意ください。</p>
+    </section>
+
+    <section class="card" aria-labelledby="h-cookie">
+      <h2 id="h-cookie">Cookie・アクセス解析・広告</h2>
+      <p>このサイトでは、Cookie、アクセス解析ツール、広告を使っていません。</p>
+      <p>今後、アクセス解析や広告・アフィリエイトを導入する場合は、このページを改定してお知らせします。</p>
+    </section>
+
+    <section class="card" aria-labelledby="h-hosting">
+      <h2 id="h-hosting">サイトの公開（ホスティング）について</h2>
+      <p>このサイトは GitHub Pages（GitHub, Inc. のサービス）で公開しています。ページを開いたとき、GitHub がアクセスに関する情報（IPアドレスなど）を記録する場合があります。取り扱いについては、GitHub のプライバシーステートメントをご覧ください。</p>
+      <p><a href="https://docs.github.com/ja/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub 一般プライバシーステートメント<span class="visually-hidden">（新しいタブで開きます）</span></a></p>
+      <p>運営者がアクセス情報を独自に収集することはありません。</p>
+    </section>
+
+    <section class="card" aria-labelledby="h-external">
+      <h2 id="h-external">外部サービスについて</h2>
+      <p>お問い合わせの受付には、Googleフォーム（Google LLC が提供する外部サービス）を利用しています。フォームに入力した内容はGoogleのサービスに送信され、Googleによる取り扱いは<a href="https://policies.google.com/privacy?hl=ja" target="_blank" rel="noopener noreferrer">Googleのプライバシーポリシー<span class="visually-hidden">（新しいタブで開きます）</span></a>に従います。運営者は、お問い合わせの内容を返信と、サイト・ツールの改善のためだけに使います。</p>
+      <p>今後、応援の受付にBuy Me a Coffeeを利用する予定です。利用を始めるときは、このページを更新してお知らせします。</p>
+    </section>
+
+    <section class="card" aria-labelledby="h-revise">
+      <h2 id="h-revise">改定とお問い合わせ</h2>
+      <p>このポリシーは、必要に応じて改定することがあります。改定した場合は、このページでお知らせします。</p>
+      <p>このポリシーについてのお問い合わせは、<a href="about.html">運営者ページ</a>の窓口からお願いします。</p>
+      <p class="muted">制定日：2026年10月9日</p>
+    </section>
+  </main>
+
+  <footer>
+    <ul class="footer-links">
+      <li><a href="about.html">運営者</a></li>
+      <li><a href="privacy.html" aria-current="page">プライバシーポリシー</a></li>
+    </ul>
+    <p>&copy; 2026 暮らしの小さなWebツール</p>
+  </footer>
+</body>
+</html>
