@@ -521,6 +521,7 @@
   @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
   }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 </style>
 </head>
 <body>
@@ -600,7 +601,7 @@
       <!-- 投げ銭：DONATE_URL が空のときは表示しない -->
       <div class="support" id="support" hidden>
         <p>役に立ったら、応援をお願いします</p>
-        <a class="btn-donate" id="donate-link" href="#" target="_blank" rel="noopener noreferrer">応援する</a>
+        <a class="btn-donate" id="donate-link" href="#" target="_blank" rel="noopener noreferrer">応援する<span class="visually-hidden">（新しいタブで開きます）</span></a>
       </div>
 
       <!-- 関連リンク：AFFILIATE_LINKS が空のときは表示しない -->
@@ -642,7 +643,7 @@
 
   /* ===== 設定（オーナーが決めたら値を入れる。空のままなら表示しない） ===== */
   // 投げ銭の遷移先URL（例：Ofuse、Buy Me a Coffee 等）
-  const DONATE_URL = "";
+  const DONATE_URL = "https://buymeacoffee.com/discreco";
   // 関連リンク（アフィリエイト）。例：{ label: "表示名", url: "リンク先" }
   const AFFILIATE_LINKS = [];
   // 運営者・プライバシーポリシーのページ（用意できたら相対パスを入れる）
