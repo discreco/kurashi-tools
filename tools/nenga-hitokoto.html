@@ -395,6 +395,22 @@
     text-decoration: none;
   }
   .btn-donate:hover { background: var(--accent-soft); }
+  /* コピー直後の応援案内（コピーしたカードの直下に1か所だけ。固定配置にしない） */
+  .copy-note {
+    margin: 12px 0 0;
+    padding: 10px 0 0;
+    border-top: 1px dashed var(--border);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+  .copy-note a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 4px;
+    font-weight: 600;
+  }
   .affiliate {
     margin-top: 24px;
     padding: 16px 18px;
@@ -884,6 +900,7 @@
   const resultsTitle = $("results-title");
   const support = $("support");
   const affiliate = $("affiliate");
+  let copyNote = null; // コピー直後の応援案内（同じ画面で1か所だけ）
 
   function announce(msg) {
     live.textContent = "";
@@ -952,6 +969,7 @@
     cards.hidden = !has;
     resultActions.hidden = !has;
     renderMonetize(has);
+    // 候補を作り直すと、カード内の応援案内も一緒に消える（既存の応援欄に戻る）
     cards.textContent = "";
     if (!has) return;
     const list = buildCandidates(state.cat, state.news, state.order, state.page);
@@ -974,7 +992,7 @@
       const err = document.createElement("p");
       err.className = "copy-error";
       err.hidden = true;
-      btn.addEventListener("click", function () { onCopy(text, btn, err); });
+      btn.addEventListener("click", function () { onCopy(text, btn, err, li); });
       li.appendChild(p);
       li.appendChild(cnt);
       li.appendChild(btn);
@@ -984,6 +1002,7 @@
   }
 
   function renderMonetize(show) {
+    // renderResults から呼ばれ、直後にカード（応援案内を含む）が作り直されるので、ここでは既存の応援欄を戻す
     support.hidden = !(show && DONATE_URL);
     if (DONATE_URL) $("donate-link").href = DONATE_URL;
     const ok = show && Array.isArray(AFFILIATE_LINKS) && AFFILIATE_LINKS.length > 0;
@@ -1061,6 +1080,34 @@
     scrollToResults();
   }
 
+  /* ===== コピー直後の応援案内 ===== */
+  function buildCopyNote() {
+    const p = document.createElement("p");
+    p.className = "copy-note";
+    p.appendChild(document.createTextNode("役に立ったら応援していただけるとうれしいです "));
+    const a = document.createElement("a");
+    a.href = DONATE_URL;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.textContent = "応援する";
+    const sr = document.createElement("span");
+    sr.className = "visually-hidden";
+    sr.textContent = "（新しいタブで開きます）";
+    a.appendChild(sr);
+    p.appendChild(a);
+    return p;
+  }
+
+  // コピーしたカードの直下に出す。既にあれば移すだけで増やさない。
+  // 表示中は既存の応援欄を隠し、応援リンクが同時に2つ見えないようにする。
+  // フォーカスは動かさず、読み上げ通知（aria-live）も追加しない
+  function showCopyNote(li) {
+    if (!DONATE_URL || !li) return;
+    if (!copyNote) copyNote = buildCopyNote();
+    if (copyNote.parentNode !== li) li.appendChild(copyNote);
+    support.hidden = true;
+  }
+
   /* ===== コピー ===== */
   function fallbackCopy(text) {
     const ta = document.createElement("textarea");
@@ -1092,13 +1139,14 @@
     return Promise.resolve(fallbackCopy(text));
   }
 
-  function onCopy(text, btn, err) {
+  function onCopy(text, btn, err, li) {
     copyText(text).then(function (ok) {
       if (ok) {
         err.hidden = true;
         btn.textContent = "コピーしました";
         btn.classList.add("is-done");
         announce("コピーしました");
+        showCopyNote(li);
         clearTimeout(btn._t);
         btn._t = setTimeout(function () {
           btn.textContent = "コピー";
