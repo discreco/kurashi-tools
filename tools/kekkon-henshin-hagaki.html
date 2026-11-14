@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>結婚式の返信はがき 書き方と一言｜暮らしの小さなWebツール</title>
+<meta name="description" content="結婚式の返信はがきのどこを消すかを図で確認でき、出席・欠席の一言の文例が見つかります。登録不要・入力内容は端末の外に送りません。">
+<style>
+  :root {
+    --bg: #fffdf9;
+    --surface: #ffffff;
+    --text: #1f2430;
+    --text-muted: #5b6475;
+    --accent: #ff7a59;
+    --accent-strong: #c2410c;
+    --accent-soft: #fff1ea;
+    --mint: #12a594;
+    --mint-soft: #e6f7f4;
+    --sky-soft: #eaf4ff;
+    --border: #eee8e1;
+    --shadow: 0 1px 2px rgba(31, 36, 48, 0.04), 0 8px 24px rgba(31, 36, 48, 0.06);
+    /* 図：消す線（コーラル系）と書き足す囲み（青系） */
+    --line: #c2410c;
+    --write: #1d5fbf;
+    --write-soft: #eaf4ff;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+    font-size: 1rem;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    word-break: auto-phrase;
+    overflow-wrap: anywhere;
+  }
+  button { font: inherit; color: inherit; }
+  a { color: var(--accent-strong); }
+  :focus-visible {
+    outline: 3px solid var(--accent-strong);
+    outline-offset: 2px;
+  }
+
+  /* ヘッダー */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 16px 72px;
+    text-align: center;
+    background:
+      radial-gradient(circle at 15% 20%, #ffe3d6 0, transparent 45%),
+      radial-gradient(circle at 85% 15%, #d9f3ee 0, transparent 40%),
+      radial-gradient(circle at 70% 90%, #e3efff 0, transparent 45%),
+      var(--bg);
+  }
+  .hero-nav {
+    max-width: 640px;
+    margin: 0 auto 20px;
+    text-align: left;
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 4px;
+    font-size: 1rem;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .back-link:hover { text-decoration: underline; }
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--border);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #0b7a6d;
+  }
+  .badge::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--mint);
+  }
+  .badge.ai { color: var(--accent-strong); }
+  .badge.ai::before { background: var(--accent); }
+  h1 {
+    font-size: clamp(1.7rem, 6vw, 2.4rem);
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    margin: 0 0 12px;
+    font-weight: 800;
+  }
+  .tagline {
+    max-width: 30em;
+    margin: 0 auto;
+    color: var(--text-muted);
+    font-size: 1rem;
+    text-wrap: balance;
+  }
+
+  /* 本文 */
+  .wrap {
+    max-width: 640px;
+    margin: -44px auto 0;
+    padding: 0 16px 40px;
+    position: relative;
+  }
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px 18px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  .step-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    margin: 0 0 4px;
+  }
+  .step-num {
+    display: inline-block;
+    flex: none;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .step-desc {
+    margin: 0 0 14px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  /* 紹介文（pages/kekkon-henshin-hagaki.md。「こんな時に使えます」は常に表示、「使い方」「よくある質問」は折りたたみ） */
+  .intro { padding: 18px 18px 8px; }
+  .intro-title {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin: 0 0 6px;
+  }
+  .intro-lead {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    color: var(--text-muted);
+  }
+  .intro details, .mayoi details { border-top: 1px solid var(--border); }
+  .intro summary, .more summary, .mayoi summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 48px;
+    padding: 4px 2px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-strong);
+    cursor: pointer;
+    list-style: none;
+  }
+  .intro summary::-webkit-details-marker,
+  .more summary::-webkit-details-marker,
+  .mayoi summary::-webkit-details-marker { display: none; }
+  .intro summary::after, .more summary::after, .mayoi summary::after {
+    content: "";
+    flex: none;
+    width: 9px;
+    height: 9px;
+    margin-right: 6px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg) translateY(-3px);
+    transition: transform .15s;
+  }
+  .intro details[open] > summary::after,
+  .more[open] > summary::after,
+  .mayoi details[open] > summary::after { transform: rotate(-135deg) translateY(-3px); }
+  .intro-body { padding: 0 2px 14px; }
+  .intro-body h3 { font-size: 1rem; margin: 10px 0 4px; }
+  .intro-body h3:first-child { margin-top: 0; }
+  .intro-body ul, .intro-body ol {
+    margin: 0;
+    padding-left: 1.4em;
+    color: var(--text-muted);
+    font-size: 1rem;
+  }
+  .intro-body li + li { margin-top: 4px; }
+  .intro-uses { padding-top: 4px; }
+  .faq { margin: 0; }
+  .faq dt { margin: 12px 0 2px; font-weight: 700; font-size: 1rem; }
+  .faq dt:first-child { margin-top: 0; }
+  .faq dd { margin: 0; color: var(--text-muted); font-size: 1rem; }
+
+  /* 出欠チップ（STEP1）：2個を横並び・高さ64px以上 */
+  .chips-attend {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .chip-attend {
+    min-height: 64px;
+    padding: 8px 10px;
+    border-radius: 14px;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    font-size: 1.05rem;
+    line-height: 1.4;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color .15s, border-color .15s;
+  }
+  .chip-attend:hover { border-color: #f3c9b8; }
+  .chip-attend[aria-pressed="true"] {
+    background: var(--accent-soft);
+    border-color: var(--accent-strong);
+    color: var(--accent-strong);
+    font-weight: 700;
+  }
+
+  /* 条件チップ（STEP2。nenga の近況チップと同じ） */
+  .field { margin: 0 0 14px; }
+  .field:last-child { margin-bottom: 0; }
+  .field-label {
+    display: block;
+    margin: 0 0 6px;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .chip {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    font-size: 1rem;
+    line-height: 1.3;
+    cursor: pointer;
+    transition: background-color .15s, border-color .15s;
+  }
+  .chip:hover { border-color: #b9e5dd; }
+  .chip[aria-pressed="true"] {
+    background: var(--mint-soft);
+    border-color: var(--mint);
+    color: #0b6b60;
+    font-weight: 700;
+  }
+  .hint {
+    margin: 6px 0 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  .more { border-top: 1px solid var(--border); margin-top: 14px; }
+  .more-body { padding: 2px 0 4px; }
+
+  #step2 { scroll-margin-top: 12px; }
+
+  /* 結果 */
+  .results-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    margin: 0 0 6px;
+    scroll-margin-top: 12px;
+  }
+  .results-head::before {
+    content: "";
+    flex: none;
+    width: 6px;
+    height: 1.2em;
+    border-radius: 3px;
+    background: linear-gradient(var(--accent), #ffb26b);
+  }
+  .note-small {
+    margin: 0 0 14px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  .placeholder {
+    margin: 0 0 20px;
+    padding: 28px 18px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1rem;
+    background: var(--surface);
+    border: 2px dashed #f3d9cc;
+    border-radius: 18px;
+  }
+  .jump {
+    margin: 0 0 12px;
+  }
+  .jump a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 4px;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 14px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: var(--shadow);
+  }
+  .cards.is-refreshed .card { animation: card-in 0.35s ease-out both; }
+  .cards.is-refreshed .card:nth-child(2) { animation-delay: 0.06s; }
+  .cards.is-refreshed .card:nth-child(3) { animation-delay: 0.12s; }
+  @keyframes card-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+  .card-text {
+    margin: 0 0 6px;
+    font-size: 1rem;
+    line-height: 1.85;
+    white-space: pre-line;
+    -webkit-user-select: text;
+    user-select: text;
+  }
+  .card-count {
+    margin: 0 0 12px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: right;
+  }
+  .btn-copy {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    border: none;
+    border-radius: 12px;
+    background: var(--accent-strong);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color .15s;
+  }
+  .btn-copy:hover { background: #a8380a; }
+  .btn-copy.is-done { background: #0b7a6d; }
+  .copy-error {
+    margin: 8px 0 0;
+    font-size: 0.9rem;
+    color: var(--accent-strong);
+  }
+  .copy-hint {
+    margin: 12px 0 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+  .btn-more, .btn-print {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    margin-top: 16px;
+    border-radius: 12px;
+    background: var(--surface);
+    border: 1.5px solid var(--accent);
+    color: var(--accent-strong);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .btn-more:hover, .btn-print:hover { background: var(--accent-soft); }
+
+  .result-block { margin-top: 36px; }
+
+  /* はがきの図 */
+  .fig-warning {
+    margin: 0 0 14px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    font-size: 1rem;
+    line-height: 1.65;
+    font-weight: 600;
+  }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    margin: 0 0 14px;
+    padding: 0;
+    list-style: none;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+  .legend li { display: inline-flex; align-items: center; gap: 6px; }
+  .legend-strike {
+    display: inline-block;
+    width: 28px;
+    height: 0;
+    border-top: 6px double var(--line);
+  }
+  .fig-grid { display: grid; gap: 22px; }
+  .fig h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+  }
+  .fig-note {
+    margin: 8px 0 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+  .hagaki {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 14px 12px;
+    background: #fffefb;
+    border: 1.5px solid #d9d2ca;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(31, 36, 48, 0.05);
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.7;
+    overflow: hidden;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+  .hagaki.is-tate {
+    writing-mode: vertical-rl;
+    -webkit-writing-mode: vertical-rl;
+    height: 440px;
+    padding: 14px 12px;
+  }
+  .hagaki.front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+  }
+  .hagaki.front.is-yoko { min-height: 190px; }
+  .hagaki.back {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+  }
+  .hg-row { margin: 0; }
+  .hg-muted { color: var(--text-muted); }
+  .hg-name { font-size: 1.15rem; font-weight: 700; }
+  .is-yoko .hg-name { font-size: 1rem; }
+  .nw { white-space: nowrap; }
+  .hg-choice {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .hagaki.is-tate .hg-choice { justify-content: flex-start; gap: 1.5em; padding-inline-start: 0.5em; }
+  /* 消す（二重線） */
+  .strike { position: relative; }
+  .strike::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+  }
+  .is-yoko .strike::after {
+    left: -2px;
+    right: -2px;
+    top: 50%;
+    height: 0;
+    border-top: 6px double var(--line);
+    transform: translateY(-50%);
+  }
+  .is-tate .strike::after {
+    top: -2px;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    border-left: 6px double var(--line);
+    transform: translateX(-50%);
+  }
+  /* ○で囲む */
+  .circled {
+    border: 2.5px solid var(--line);
+    border-radius: 999px;
+    padding: 2px 7px;
+  }
+  .is-tate .circled { padding: 7px 2px; }
+  /* 番号マーカー（直径24px以上） */
+  .mk {
+    display: inline-block;
+    writing-mode: horizontal-tb;
+    -webkit-writing-mode: horizontal-tb;
+    width: 28px;
+    height: 28px;
+    margin-inline-end: 4px;
+    border-radius: 50%;
+    background: var(--line);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  /* 書き足す（青系の囲み＋「書く」） */
+  .write {
+    border: 1.5px solid var(--write);
+    border-radius: 6px;
+    background: var(--write-soft);
+    padding: 1px 4px;
+    color: var(--text);
+    font-weight: 400;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  .write-tag {
+    display: inline-block;
+    padding: 0 4px;
+    margin-inline-end: 4px;
+    border-radius: 4px;
+    background: var(--write);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  .hg-msg {
+    flex: 1 1 auto;
+    padding: 5px;
+    border: 1.5px dashed var(--write);
+    border-radius: 8px;
+    background: var(--write-soft);
+  }
+  .hg-msg-text {
+    margin: 0;
+    white-space: pre-line;
+    color: #5b6475;
+    line-height: 1.55;
+  }
+  .hagaki.is-tate .hg-msg-text { line-height: 1.4; }
+  .unselected-note {
+    margin: 14px 0 0;
+    font-size: 1rem;
+  }
+  .steps {
+    margin: 16px 0 0;
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    gap: 8px;
+  }
+  .steps li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 1rem;
+  }
+  .steps .mk { flex: none; margin: 0; }
+  .fig-supp {
+    margin: 14px 0 0;
+    padding-left: 1.2em;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+  .print-note {
+    margin: 8px 0 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+  .attend-timing {
+    margin: 16px 0 0;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: var(--sky-soft);
+    font-size: 1rem;
+  }
+
+  /* 欠席のときの流れ */
+  .flow {
+    margin: 0;
+    padding-left: 1.5em;
+    display: grid;
+    gap: 12px;
+  }
+  .flow li { font-size: 1rem; }
+  .flow li::marker { font-weight: 700; color: var(--accent-strong); }
+  .flow-title { display: block; font-weight: 700; }
+  .flow p { margin: 2px 0 0; }
+  .flow a.inline-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .telegram {
+    margin: 10px 0 0;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: #fcfbf9;
+  }
+  .telegram h3 { margin: 0 0 4px; font-size: 1rem; }
+  .telegram ul { margin: 0; padding: 0; list-style: none; }
+  .telegram a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 1rem;
+  }
+  .telegram .hint { margin-top: 4px; }
+
+  .result-notes {
+    margin: 24px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 6px;
+  }
+  .result-notes li {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  /* 迷ったとき */
+  .mayoi { margin-top: 24px; padding: 8px 18px; }
+  .mayoi details { border-top: none; }
+  .mayoi-body { padding: 0 2px 12px; }
+  .mayoi-body > p { margin: 0 0 10px; color: var(--text-muted); }
+  .mayoi-item { margin: 0 0 14px; scroll-margin-top: 12px; }
+  .mayoi-item:last-child { margin-bottom: 0; }
+  .mayoi-item h3 { margin: 0 0 2px; font-size: 1rem; }
+  .mayoi-item p { margin: 0; font-size: 1rem; color: var(--text); }
+
+  /* 収益（設定されたときだけ表示） */
+  .support {
+    text-align: center;
+    margin: 28px 0 0;
+  }
+  .support p {
+    margin: 0 0 8px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+  .btn-donate {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 6px 20px;
+    border-radius: 999px;
+    border: 1.5px solid var(--accent);
+    color: var(--accent-strong);
+    background: var(--surface);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .btn-donate:hover { background: var(--accent-soft); }
+  /* コピー直後の応援案内（コピーしたカードの直下に1か所だけ。固定配置にしない） */
+  .copy-note {
+    margin: 12px 0 0;
+    padding: 10px 0 0;
+    border-top: 1px dashed var(--border);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+  .copy-note a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 4px;
+    font-weight: 600;
+  }
+
+  /* 注意書き・出典 */
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    margin: 0 0 12px;
+  }
+  .section-title::before {
+    content: "";
+    flex: none;
+    width: 6px;
+    height: 1.2em;
+    border-radius: 3px;
+    background: linear-gradient(var(--accent), #ffb26b);
+  }
+  .about {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 22px 20px;
+    box-shadow: var(--shadow);
+  }
+  .about p {
+    margin: 0 0 12px;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+  .about ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 8px;
+  }
+  .about li {
+    position: relative;
+    padding-left: 1.6em;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+  .about li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--mint);
+    font-weight: 700;
+  }
+  .notes-section, .sources-section { margin-top: 36px; }
+  .sources-lead { color: var(--text) !important; font-size: 1rem !important; }
+  .source-list { gap: 0 !important; }
+  .source-list li { color: var(--text); }
+  .source-list li::before { content: "・" !important; color: var(--text-muted) !important; }
+  .source-list a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 1rem;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    padding: 8px 16px 40px;
+  }
+  footer p { margin: 0 0 6px; }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 16px;
+    margin: 0 0 6px;
+    padding: 0;
+    list-style: none;
+  }
+  .footer-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 1rem;
+    color: var(--text-muted);
+  }
+
+  .noscript {
+    margin: 0 0 20px;
+    padding: 16px;
+    border-radius: 14px;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    font-weight: 700;
+    text-align: center;
+  }
+  .sr-only, .visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0);
+    white-space: nowrap; border: 0;
+  }
+  .print-head { display: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+  }
+
+  /* 印刷：図・手順・表示中の候補・欠席の流れ・出典と確認日・AI使用の注意書きだけ */
+  @media print {
+    @page { size: A4; margin: 12mm 12mm; }
+    body { background: #fff; color: #000; font-size: 10pt; line-height: 1.5; }
+    .no-print, .hero, footer, noscript { display: none !important; }
+    .wrap { max-width: none; margin: 0; padding: 0; }
+    a { color: #000; }
+    .print-head { display: block; margin: 0 0 8pt; }
+    .print-head h1 { font-size: 15pt; margin: 0 0 2pt; }
+    .print-head p { margin: 0; font-size: 9pt; }
+    .results-head { font-size: 11.5pt; margin: 0 0 4pt; }
+    .results-head::before, .section-title::before { display: none; }
+    .result-block { margin-top: 10pt; }
+    .cards { gap: 4pt; }
+    .card { box-shadow: none; border: 1px solid #000; border-radius: 0; padding: 3pt 8pt; break-inside: avoid; }
+    .card-text { font-size: 9.5pt; line-height: 1.45; margin: 0; }
+    .card-count { display: none; }
+    .fig-warning { background: none; border: 1px solid #000; border-radius: 0; color: #000; font-size: 9.5pt; padding: 4pt 6pt; margin-bottom: 6pt; }
+    .legend { font-size: 8.5pt; color: #000; margin-bottom: 6pt; }
+    .legend-strike { border-top-color: #000; }
+    .fig-grid { grid-template-columns: 1fr 1fr; gap: 10pt; break-inside: avoid; }
+    .fig h3 { font-size: 10.5pt; margin-bottom: 3pt; }
+    .fig-note { font-size: 8.5pt; color: #000; }
+    .hagaki { box-shadow: none; border: 1px solid #000; background: #fff; color: #000; }
+    .hagaki.is-tate { height: auto; min-height: 0; }
+    .hg-muted, .hg-msg-text { color: #333; }
+    .strike::after { border-color: #000 !important; }
+    .circled { border-color: #000; }
+    .mk { background: #fff; color: #000; border: 1.5px solid #000; line-height: 25px; }
+    .write { background: none; border-color: #000; }
+    .write-tag { background: #fff; color: #000; border: 1px solid #000; }
+    .hg-msg { background: none; border-color: #000; }
+    .steps { margin-top: 6pt; gap: 2pt; }
+    .steps li { font-size: 9.5pt; }
+    .steps .mk { width: 18px; height: 18px; line-height: 15px; font-size: 8.5pt; }
+    .fig-supp, .unselected-note, .attend-timing { font-size: 9pt; color: #000; margin-top: 4pt; }
+    .attend-timing { background: none; padding: 0; }
+    .flow { gap: 3pt; }
+    .flow li { font-size: 9.5pt; }
+    .flow a.inline-link { min-height: 0; }
+    .telegram { background: none; border: 1px solid #000; border-radius: 0; padding: 3pt 6pt; margin-top: 3pt; }
+    .telegram h3 { font-size: 9.5pt; }
+    .telegram a { min-height: 0; color: #000; text-decoration: none; font-size: 9.5pt; }
+    .telegram .hint { font-size: 8.5pt; color: #000; }
+    .notes-section, .sources-section { margin-top: 8pt; }
+    .section-title { font-size: 11pt; margin-bottom: 3pt; }
+    .about { box-shadow: none; border: 1px solid #000; border-radius: 0; padding: 4pt 8pt; }
+    .about p, .about li { font-size: 8.5pt; color: #000; margin-bottom: 2pt; }
+    .about ul { gap: 1pt; }
+    .about li::before { color: #000; }
+    .sources-lead { font-size: 9pt !important; color: #000 !important; }
+    .source-list li { font-size: 8pt; line-height: 1.3; padding-left: 1em; }
+    .source-list a { min-height: 0; color: #000; text-decoration: none; font-size: 8pt; }
+    .source-list a::after { content: "（" attr(href) "）"; font-size: 7pt; word-break: break-all; }
+  }
+</style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="hero-nav" aria-label="サイト内">
+      <a class="back-link" href="../index.html">&larr; 暮らしの小さなWebツール トップへ</a>
+    </nav>
+    <div class="badges">
+      <span class="badge">無料・登録不要</span>
+      <span class="badge ai">AI（Claude）で作成</span>
+    </div>
+    <h1>結婚式の返信はがき 書き方と一言</h1>
+    <p class="tagline">出席か欠席を選ぶだけで、消し方の図と一言の文例が出ます</p>
+  </header>
+
+  <main class="wrap">
+    <noscript>
+      <p class="noscript">このツールはJavaScriptが必要です。ブラウザの設定でJavaScriptを有効にしてください。</p>
+    </noscript>
+
+    <!-- 紹介文（pages/kekkon-henshin-hagaki.md）。印刷には出さない（no-print） -->
+    <section class="panel intro no-print" aria-labelledby="intro-title">
+      <h2 class="intro-title" id="intro-title">結婚式の返信はがき、どこを消すか・何を書くかを、選ぶだけで確認できます</h2>
+      <p class="intro-lead">結婚式の招待状に入っている返信はがきについて、二重線で消す場所の図と、添える一言の文例を確認できます。出席か欠席かを選ぶと、模擬のはがき（表と裏）の図と、選んだ関係（友人・後輩／職場の人・目上の方）に合わせた一言の文例が出ます。文字を入力する欄はなく、登録は不要で、無料です。</p>
+      <p class="intro-lead">ここにある消し方や流れは、記事や各社の案内に書かれている考え方をまとめた「目安」で、公的な基準ではありません。出典と確認日（<span class="js-checked"></span>）は画面に載せています。印字は式場ごとに違うので、お手元のはがきの文字に合わせて読み替えてください。欠席を選ぶと、はがきを出す前の一報や、祝電を送る場合の時期の目安も出ます。祝電の文例や、お祝いの金額は載せていません。</p>
+      <div class="intro-body intro-uses">
+        <h3>こんな時に使えます</h3>
+        <ul>
+          <li>招待状が届いて、返信はがきの「行」や「御」をどこまで二重線で消すのか、図で確かめたいとき</li>
+          <li>出席・欠席の一言に何を添えるか迷っていて、句読点を使わない書き方の文例を見たいとき</li>
+          <li>欠席することになり、はがきを出す前に何をしておくか、流れを整理したいとき</li>
+        </ul>
+      </div>
+      <details>
+        <summary>使い方</summary>
+        <div class="intro-body">
+          <ol>
+            <li>出席か欠席かを選びます。すぐに一言の候補と、はがきの図が出ます。</li>
+            <li>相手との関係（友人・後輩／職場の人・目上の方）を選びます。欠席のときは、理由（書かない・仕事の都合・やむを得ない事情）も選べます。文の長さと、はがきの向き（縦書き・横書き）は「詳しい設定」にあります。</li>
+            <li>気に入った一言の「コピー」を押して、メモなどに貼り、見ながらはがきに手書きで書き写します。図と手順は、印刷してはがきの横に置くこともできます。</li>
+          </ol>
+        </div>
+      </details>
+      <details>
+        <summary>よくある質問</summary>
+        <div class="intro-body">
+          <dl class="faq">
+            <dt>Q. 選んだ内容は、どこかに送られますか？</dt>
+            <dd>A. 送られません。ブラウザの中だけで動き、保存もしません。文字を入力する欄も、名前や住所を入れる欄もありません。祝電の会社へのリンク先は外部サイトで、そこで入力した内容は各社の扱いになります。</dd>
+            <dt>Q. 図や文は、そのとおりにすれば大丈夫ですか？</dt>
+            <dd>A. 目安です。記事によって意見が分かれる点（句読点の扱い、欠席の連絡の手段や時期、選ばなかった側の語句の消し方など）は、画面の「迷ったとき」に両方を載せています。図では、選ばなかった側には手を付けていません。最終的には、お手元のはがきや、式場・新郎新婦の案内に合わせてご判断ください。</dd>
+            <dt>Q. このツールは誰が作っているのですか？ 文例も？</dt>
+            <dd>A. AI（Claude）と一緒に企画・制作し、人が確認して公開しています。文例もAIが書き下ろしたもので、他のサイトの文例集からの転載ではありません。そのまま使うか、言葉を足して使うかは、相手との関係に合わせてお決めください。</dd>
+          </dl>
+        </div>
+      </details>
+    </section>
+
+    <div class="print-head">
+      <h1>結婚式の返信はがき 書き方と一言</h1>
+      <p>暮らしの小さなWebツールで作成（AI（Claude）を使って制作）</p>
+    </div>
+
+    <section class="panel no-print" aria-labelledby="step1-title">
+      <h2 class="step-title" id="step1-title"><span class="step-num">STEP1</span>出席しますか、欠席しますか？</h2>
+      <p class="step-desc">選ぶとすぐに一言の候補と書き方の図が出ます</p>
+      <div class="chips-attend" id="chips-attend" role="group" aria-labelledby="step1-title">
+        <button type="button" class="chip-attend" data-key="attend" aria-pressed="false">出席します</button>
+        <button type="button" class="chip-attend" data-key="absent" aria-pressed="false">欠席します</button>
+      </div>
+    </section>
+
+    <p class="placeholder no-print" id="placeholder">出席か欠席を選ぶと、一言と書き方の図が出ます</p>
+
+    <section class="panel no-print" id="step2" aria-labelledby="step2-title" hidden>
+      <h2 class="step-title" id="step2-title"><span class="step-num">STEP2</span>条件を整える</h2>
+      <p class="step-desc">変えるとすぐに候補が変わります。そのままでも使えます</p>
+      <div class="field">
+        <span class="field-label" id="lbl-rel">相手との関係</span>
+        <div class="chips" id="chips-rel" role="group" aria-labelledby="lbl-rel">
+          <button type="button" class="chip" data-key="friend" aria-pressed="true">友人・後輩</button>
+          <button type="button" class="chip" data-key="senior" aria-pressed="false">職場の人・目上の方</button>
+        </div>
+      </div>
+      <div class="field" id="field-reason">
+        <span class="field-label" id="lbl-reason">欠席の理由</span>
+        <div class="chips" id="chips-reason" role="group" aria-labelledby="lbl-reason" aria-describedby="hint-reason">
+          <button type="button" class="chip" data-key="none" aria-pressed="false">書かない</button>
+          <button type="button" class="chip" data-key="work" aria-pressed="false">仕事の都合</button>
+          <button type="button" class="chip" data-key="unavoidable" aria-pressed="true">やむを得ない事情</button>
+        </div>
+        <p class="hint" id="hint-reason">理由は書かなくても大丈夫です。このツールの選択肢は、具体的に書かない言い方だけにしています</p>
+      </div>
+      <details class="more" id="more">
+        <summary>詳しい設定（長さ・はがきの向き）</summary>
+        <div class="more-body">
+          <div class="field">
+            <span class="field-label" id="lbl-len">長さ</span>
+            <div class="chips" id="chips-len" role="group" aria-labelledby="lbl-len">
+              <button type="button" class="chip" data-key="std" aria-pressed="true">標準</button>
+              <button type="button" class="chip" data-key="short" aria-pressed="false">短め</button>
+            </div>
+          </div>
+          <div class="field">
+            <span class="field-label" id="lbl-dir">はがきの向き</span>
+            <div class="chips" id="chips-dir" role="group" aria-labelledby="lbl-dir" aria-describedby="hint-dir">
+              <button type="button" class="chip" data-key="tate" aria-pressed="true">縦書き</button>
+              <button type="button" class="chip" data-key="yoko" aria-pressed="false">横書き</button>
+            </div>
+            <p class="hint" id="hint-dir">お手元の返信はがきに合わせて選ぶと、下の図が変わります</p>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <div id="results" hidden>
+      <!-- 結果1：一言の候補 -->
+      <section aria-labelledby="results-title">
+        <h2 class="results-head" id="results-title" tabindex="-1">一言の候補</h2>
+        <p class="jump no-print"><a href="#figure-title" id="jump-figure">消し方の図を見る &darr;</a></p>
+        <ul class="cards" id="cards"></ul>
+        <p class="copy-hint no-print">コピーした文は下書き用です。返信はがきは、手書きで書き写してください。</p>
+        <button type="button" class="btn-more no-print" id="btn-more">ほかの案を見る</button>
+      </section>
+
+      <!-- 結果2：はがきの書き方の図 -->
+      <section class="result-block" aria-labelledby="figure-title">
+        <h2 class="results-head" id="figure-title" tabindex="-1">返信はがきの書き方（図）</h2>
+        <p class="fig-warning">この図は典型的な例です。印字は式場ごとに違います（例：『御出席』『ご出席』、『御芳名』『ご芳名』など）。お手元のはがきの文字に合わせて書き換えてください。</p>
+        <ul class="legend" aria-hidden="true">
+          <li><span class="legend-strike"></span>二重線：消すところ</li>
+          <li><span class="write"><span class="write-tag">書く</span></span>青い囲み：書き足すところ</li>
+        </ul>
+        <div class="fig-grid">
+          <div class="fig">
+            <h3>表（宛名面）</h3>
+            <div class="hagaki front is-tate" id="hg-front" role="img"></div>
+            <p class="fig-note">「行」「宛」は二重線で消して「様」に書き直す</p>
+          </div>
+          <div class="fig">
+            <h3>裏（出欠面）</h3>
+            <div class="hagaki back is-tate" id="hg-back" role="img"></div>
+          </div>
+        </div>
+        <p class="unselected-note">選ばなかったほうの消し方は記事によって違います<span class="no-print">（下の<a href="#mayoi-unselected" class="js-open-mayoi">『迷ったとき』</a>を参照）</span>。</p>
+        <ol class="steps" id="steps" aria-label="書き方の手順"></ol>
+        <ul class="fig-supp">
+          <li>修正液・修正テープは使わないとする記事が複数あります</li>
+          <li>縦書きは縦線、横書きは横線で消します</li>
+        </ul>
+        <p class="attend-timing" id="attend-timing" hidden>出席の返信は、届いてから2〜3日、遅くとも1週間以内を目安とする記事が複数あります（みんなのウェディング）。</p>
+        <button type="button" class="btn-print no-print" id="btn-print">この手引きを印刷する</button>
+        <p class="print-note no-print">［コピー］は、メモなどに貼って見ながら書き写す下書き用です。［この手引きを印刷する］は、図と手順と表示中の候補を紙に出して、はがきの横に置いて確かめる手引き用です（選んだ内容のほかは何も入りません）。印刷画面からPDFとして保存もできます。</p>
+      </section>
+
+      <!-- 結果3：欠席のときの流れ（欠席のときだけ） -->
+      <section class="result-block" id="absent-flow" aria-labelledby="flow-title" hidden>
+        <h2 class="results-head" id="flow-title">欠席のときの流れ（目安）</h2>
+        <ol class="flow">
+          <li>
+            <span class="flow-title">先に一報</span>
+            <p>返信はがきを出す前に、電話や直接など、早めに新郎新婦へ一報を入れるとよいとする記事があります（みんなのウェディング、dime）。<a href="#mayoi-line" class="js-open-mayoi inline-link no-print">連絡の手段について（迷ったとき）</a></p>
+          </li>
+          <li>
+            <span class="flow-title">返信はがきを出す</span>
+            <p>上の一言と図を参考に、手書きで書きます。<span class="no-print">時期は<a href="#mayoi-when" class="js-open-mayoi">下の『迷ったとき』の「欠席のはがきはいつ出すか」</a>を参照してください。</span></p>
+          </li>
+          <li>
+            <span class="flow-title">お祝いの気持ちを伝える方法は人それぞれ</span>
+            <p>お祝いの品、ご祝儀、祝電など、伝え方は関係によってさまざまです。ご祝儀・お祝いの品の考え方は、招待状の発送前か後かで変わるとする記事があります（oggi、みんなのウェディング）。</p>
+          </li>
+          <li>
+            <span class="flow-title">祝電を送る場合（目安）</span>
+            <p>披露宴の前に、会場に届くようにします。前日までに届くようにする記事があります（dime、みんなのウェディング）。余裕をもって手配してください。宛先は挙式・披露宴の会場とする記事があります（dime）。宛名の書き方は招待状の表記に合わせてください。</p>
+            <div class="telegram">
+              <h3>祝電を送るとき（外部サイト）</h3>
+              <ul>
+                <li><a href="https://www.post.japanpost.jp/service/send/domestic/web/webletax/" target="_blank" rel="noopener noreferrer">日本郵便 Webレタックス<span class="visually-hidden">（新しいタブで開きます）</span></a></li>
+                <li><a href="https://www.verycard.net/" target="_blank" rel="noopener noreferrer">VERY CARD<span class="visually-hidden">（新しいタブで開きます）</span></a></li>
+              </ul>
+              <p class="hint">リンク先で入力した内容は、各社の扱いになります（このツールは受け取りません）。</p>
+              <p class="hint">料金・申込方法は各社のページで確認してください。</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- 結果エリアの下に常に出す一言 -->
+      <ul class="result-notes no-print">
+        <li>文は目安です。お手元のはがきの印字や、式場・新郎新婦の案内に合わせて言葉を変えてお使いください。</li>
+        <li>欠席の理由は、書かなくても大丈夫です。このツールの理由の選択肢は、具体的に書かない言い方だけにしています。</li>
+        <li id="note-gift" hidden>ご祝儀・お祝いの品の考え方は、招待状の発送前か後かで変わるとする記事があります。金額はこのツールでは扱いません。</li>
+      </ul>
+
+      <!-- 迷ったとき：意見が分かれる点 -->
+      <section class="panel mayoi no-print" aria-label="迷ったとき：意見が分かれる点">
+        <details id="mayoi">
+          <summary>迷ったとき：意見が分かれる点</summary>
+          <div class="mayoi-body">
+            <p>次の点は、記事によって意見が分かれています。どちらが正しいかは、ここでは決めません。</p>
+            <div class="mayoi-item" id="mayoi-punct">
+              <h3>句読点を使わないか</h3>
+              <p>結婚のお祝いの場では句読点を使わない書き方が一般的とする記事が複数あります（みんなのウェディング、kinarino、oggi ほか）。一方、厳密な禁止ではなく、Web招待状などでは気にしすぎなくてよいとする記事もあります（oggi）。このツールの文例は句読点を使わずに改行で区切っています。</p>
+            </div>
+            <div class="mayoi-item" id="mayoi-line" tabindex="-1">
+              <h3>欠席のとき、LINEだけで伝えてよいか</h3>
+              <p>返信はがきを出す前に、電話や直接など一報を入れるとよいとする記事があります（みんなのウェディング）。手段について、LINEの例文を載せる記事（みんなのウェディング）もあれば、LINEだけで済ませるのは失礼とする記事（oggi）もあります。相手との関係や、招待状に書かれた連絡先に合わせて考えてください。</p>
+            </div>
+            <div class="mayoi-item" id="mayoi-when" tabindex="-1">
+              <h3>欠席のはがきはいつ出すか</h3>
+              <p>招待状が届いてから約1週間後を目安とする記事が複数あります（みんなのウェディング、dime）。一方、早めの連絡が求められるとする記事もあります（oggi）。はがきに返信期日が印刷されている場合は、期日までに届くようにしてください。</p>
+            </div>
+            <div class="mayoi-item" id="mayoi-unselected" tabindex="-1">
+              <h3>選ばなかったほう（<span id="unselected-word">出席なら「御欠席」</span>）をどう消すか</h3>
+              <p>選ばなかったほうの語句をまるごと二重線で消すとする記事（rurubu、All About）もあれば、『御』だけを消すとする記事（みんなのウェディング、oggi、All About）もあります。このツールの図では、選ばなかったほうには手を付けていません。</p>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <!-- 投げ銭：DONATE_URL が空のときは表示しない -->
+      <div class="support no-print" id="support" hidden>
+        <p>役に立ったら、応援をお願いします</p>
+        <a class="btn-donate" id="donate-link" href="#" target="_blank" rel="noopener noreferrer">応援する<span class="visually-hidden">（新しいタブで開きます）</span></a>
+      </div>
+    </div>
+
+    <section class="notes-section" aria-labelledby="notes-title">
+      <h2 class="section-title" id="notes-title">使い方と注意書き</h2>
+      <div class="about">
+        <p class="no-print">出席か欠席を選ぶと、一言の候補が3件と、返信はがきの消し方の図が出ます。気に入った文の［コピー］を押して、メモなどに貼り、見ながら手書きで書き写してください。「ほかの案を見る」で別の候補に入れ替わります。</p>
+        <ul>
+          <li>このツールはAI（Claude）を使って企画・制作しています。文例もAIが書き下ろしたものです。</li>
+          <li>選択した内容は端末の外に送信しません。ブラウザの中だけで動き、保存もしません。文字を入力する欄もありません。</li>
+          <li>文は目安です。お手元のはがきの印字や、式場・新郎新婦の案内に合わせてお使いください。</li>
+          <li>出典の確認日：<span class="js-checked"></span>。記事は各社・各媒体の考え方で、公的な基準ではありません。</li>
+          <li>祝電各社へのリンク先は外部サイトです。リンク先で入力した内容は、各社の扱いになります。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="sources-section" aria-labelledby="sources-title">
+      <h2 class="section-title" id="sources-title">出典と確認日</h2>
+      <div class="about">
+        <p class="sources-lead">出典の確認日：<span class="js-checked"></span>。記事は各社・各媒体の考え方で、公的な基準ではありません。</p>
+        <ul class="source-list">
+          <li><a href="https://www.mwed.jp/articles/5450/" target="_blank" rel="noopener noreferrer">みんなのウェディング（返信はがきの書き方）<span class="visually-hidden">（新しいタブで開きます）</span></a></li>
+          <li><a href="https://www.mwed.jp/articles/13015/" target="_blank" rel="noopener noreferrer">みんなのウェディング（返信はがき）<span class="visually-hidden">（新しいタブで開きます）</span></a></li>
+          <li><a href="https://www.mwed.jp/articles/11805/" target="_blank" rel="noopener noreferrer">みんなのウェディング（欠席）<span class="visually-hidden">（新しいタブで開きます）</span></a></li>
+          <li><a href="https://kinarino.jp/cat6/29349" target="_blank" rel="noopener noreferrer">kinarino（返信はがき）<span class="visually-hidden">（新しいタブで開きます）</span></a></li>
+          <li><a href="https://oggi.jp/7017781" target="_blank" rel="noopener noreferrer">oggi（返信はがきの書き方）<span class="visually-hidden">（新しいタブで開きます）</span></a></li>
+          <li><a href="https://oggi.jp/6999716" target="_blank" rel="noopener noreferrer">oggi（出席の例文。句読点は厳密な禁止ではない）<span class="visually-hidden">（新しいタブで開きます）</span></a></li>
+          <li><a href="https://dime.jp/genre/1561271/" target="_blank" rel="noopener noreferrer">dime（欠席の連絡と祝電）<span class="visually-hidden">（新しいタブで開きます）</span></a></li>
+          <li><a href="https://rurubu.jp/andmore/article/25362" target="_blank" rel="noopener noreferrer">rurubu（返信はがきの書き方）<span class="visually-hidden">（新しいタブで開きます）</span></a></li>
+          <li><a href="https://oggi.jp/6994092" target="_blank" rel="noopener noreferrer">oggi（出欠の「御」の消し方）<span class="visually-hidden">（新しいタブで開きます）</span></a></li>
+          <li><a href="https://oggi.jp/6932621" target="_blank" rel="noopener noreferrer">oggi（出欠の選択肢の「御」）<span class="visually-hidden">（新しいタブで開きます）</span></a></li>
+          <li><a href="https://news.allabout.co.jp/articles/o/76184/" target="_blank" rel="noopener noreferrer">All About ニュース（欠席の返信はがき）<span class="visually-hidden">（新しいタブで開きます）</span></a></li>
+          <li><a href="https://allabout.co.jp/gm/gc/225579/" target="_blank" rel="noopener noreferrer">All About（返信はがきの書き方）<span class="visually-hidden">（新しいタブで開きます）</span></a></li>
+          <li><a href="https://allabout.co.jp/gm/gc/1106" target="_blank" rel="noopener noreferrer">All About（出欠の消し方）<span class="visually-hidden">（新しいタブで開きます）</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="sr-only" aria-live="polite" id="live"></div>
+  </main>
+
+  <footer>
+    <p>このツールはAI（Claude）と一緒に作り、人が確認して公開しています</p>
+    <ul class="footer-links">
+      <li><a href="../index.html">トップページ</a></li>
+      <li id="operator-item" hidden><a id="operator-link" href="#">運営者</a></li>
+      <li id="privacy-item" hidden><a id="privacy-link" href="#">プライバシーポリシー</a></li>
+    </ul>
+    <p>&copy; 2026 暮らしの小さなWebツール</p>
+  </footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ===== 設定（空のままなら表示しない） ===== */
+  const DONATE_URL = "https://buymeacoffee.com/discreco";
+  const OPERATOR_URL = "../about.html";
+  const PRIVACY_URL = "../privacy.html";
+  // 出典の確認日（オーナーが原典を目で確認した日に更新する）
+  const SOURCES_CHECKED = "2026年11月15日";
+
+  /* ===== 文例データ（仕様書 第8章のとおり。a＝前半2行、e＝結び） ===== */
+  const POOLS = {
+    "attend-c": [
+      { a: ["ご結婚おめでとうございます", "二人の晴れ姿を見られるのを楽しみにしています"], e: "当日は心からお祝いさせてください" },
+      { a: ["お招きいただきありがとうございます", "喜んで出席させていただきます"], e: "末永くお幸せに" },
+      { a: ["このたびはご結婚おめでとうございます", "お二人の笑顔に会えるのを楽しみにしています"], e: "当日はよろしくお願いします" },
+      { a: ["結婚おめでとう", "招待してくれてありがとう"], e: "二人に会える日を楽しみにしています" },
+      { a: ["ご結婚おめでとうございます", "大切な日にお招きいただきうれしいです"], e: "二人らしい素敵な一日になりますように" },
+      { a: ["お招きありがとうございます", "喜んで出席します"], e: "当日を楽しみにしています" }
+    ],
+    "attend-f": [
+      { a: ["このたびはご結婚誠におめでとうございます", "ご招待いただきありがとうございます"], e: "喜んで出席させていただきます" },
+      { a: ["ご結婚おめでとうございます", "晴れの日にお招きいただき光栄です"], e: "当日を楽しみにしております" },
+      { a: ["ご結婚を心よりお祝い申し上げます", "お招きいただき大変うれしく思います"], e: "喜んで出席させていただきます" },
+      { a: ["このたびはおめでとうございます", "ご招待をいただき心より感謝申し上げます"], e: "当日はお祝いの気持ちで参ります" },
+      { a: ["ご結婚おめでとうございます", "お二人の門出に立ち会えることをうれしく思います"], e: "当日を楽しみにしております" },
+      { a: ["素晴らしい日にご招待いただき光栄です", "心よりお祝い申し上げます"], e: "末永いお幸せをお祈りいたします" }
+    ],
+    "absent-c": [
+      { a: ["ご結婚おめでとうございます", "お招きいただいたのに残念ながら出席できません"], e: "二人の幸せを心から願っています" },
+      { a: ["結婚おめでとう", "せっかくの招待なのに行けなくて残念です"], e: "当日は心から二人を祝福しています" },
+      { a: ["お招きありがとうございます", "出席できず本当に残念です"], e: "心からご結婚をお祝いしています" },
+      { a: ["このたびはおめでとうございます", "参加できないのが本当に残念です"], e: "お二人の新しい生活を応援しています" },
+      { a: ["二人の結婚を聞いてとてもうれしかったです", "出席できないのが残念でなりません"], e: "いつか二人の新しい家に遊びに行かせてください" },
+      { a: ["ご結婚おめでとうございます", "残念ですが今回は出席できません"], e: "当日が素晴らしい一日になりますように" }
+    ],
+    "absent-f": [
+      { a: ["このたびはご結婚おめでとうございます", "ご招待いただきましたが残念ながら出席がかないません"], e: "お二人の末永いお幸せをお祈りいたします" },
+      { a: ["ご結婚を心よりお祝い申し上げます", "せっかくのご招待ですが出席できず誠に残念です"], e: "当日が素晴らしい一日となりますようお祈りしております" },
+      { a: ["このたびはご結婚誠におめでとうございます", "お招きいただきながら出席できず誠に残念です"], e: "ご両家のご多幸をお祈り申し上げます" },
+      { a: ["ご結婚おめでとうございます", "お招きにあずかりながら欠席させていただくことをお許しください"], e: "お二人の門出を心よりお祝い申し上げます" },
+      { a: ["ご結婚を心よりお祝い申し上げます", "まことに残念ながら欠席させていただきます"], e: "新しい生活が笑顔にあふれますようお祈りいたします" },
+      { a: ["このたびはお招きいただきありがとうございます", "出席できないことを残念に思います"], e: "お二人の幸せを心より願っております" }
+    ]
+  };
+  // 欠席の理由の行（仕様書 8-3）。none は行を出さない
+  const REASONS = {
+    work: { c: "仕事の都合がどうしてもつかなくて", f: "仕事の都合がつかないためです" },
+    unavoidable: { c: "どうしても外せない事情があって", f: "やむを得ない事情のためです" }
+  };
+
+  const ATTEND_VALUES = ["attend", "absent"];
+  const REL_VALUES = ["friend", "senior"];
+  const REASON_VALUES = ["none", "work", "unavoidable"];
+  const LEN_VALUES = ["std", "short"];
+  const DIR_VALUES = ["tate", "yoko"];
+  const DEFAULTS = { r: "friend", w: "unavoidable", l: "std", d: "tate" };
+  const PAGE_SIZE = 3;
+  const LABEL = {
+    attend: "出席", absent: "欠席",
+    friend: "友人・後輩", senior: "職場の人・目上の方",
+    none: "理由を書かない", work: "仕事の都合", unavoidable: "やむを得ない事情",
+    std: "標準", short: "短め", tate: "縦書き", yoko: "横書き"
+  };
+
+  /* ===== ロジック（純粋関数） ===== */
+
+  function toneOf(rel) { return rel === "senior" ? "f" : "c"; }
+  function poolKey(e, rel) { return e + "-" + toneOf(rel); }
+
+  // Fisher–Yates で 0..n-1 の並びを作る
+  function shuffledOrder(n, rand) {
+    rand = rand || Math.random;
+    const a = [];
+    for (let i = 0; i < n; i++) a.push(i);
+    for (let i = n - 1; i > 0; i--) {
+      const j = Math.floor(rand() * (i + 1));
+      const t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function pageCount(n) { return Math.ceil(n / PAGE_SIZE); }
+
+  // order の page 番目の3件の添字（6件÷3＝2ページなので常に3件）
+  function pageIndices(order, page) {
+    return order.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
+  }
+
+  // 1件分の行：a ＋〔R（欠席で理由が「書かない」以外）〕＋ e（標準のときのみ）
+  function buildLines(item, e, rel, reason, len) {
+    const lines = item.a.slice();
+    if (e === "absent" && reason !== "none" && REASONS[reason]) lines.push(REASONS[reason][toneOf(rel)]);
+    if (len !== "short") lines.push(item.e);
+    return lines;
+  }
+
+  // 表示中の候補（行は改行でつなぐ）
+  function buildCandidates(s) {
+    const pool = POOLS[poolKey(s.e, s.r)];
+    return pageIndices(s.order, s.page).map(function (i) {
+      return buildLines(pool[i], s.e, s.r, s.w, s.l).join("\n");
+    });
+  }
+
+  // 文字数（改行を除く。サロゲートペアも1文字）
+  function charCount(text) {
+    return Array.from(text.replace(/\n/g, "")).length;
+  }
+
+  function pick(v, list, def) { return list.indexOf(v) >= 0 ? v : def; }
+
+  // URLパラメータから選択を読む。不正値は無視して初期値
+  function parseParams(search) {
+    const p = new URLSearchParams(search);
+    return {
+      e: pick(p.get("e"), ATTEND_VALUES, null),
+      r: pick(p.get("r"), REL_VALUES, DEFAULTS.r),
+      w: pick(p.get("w"), REASON_VALUES, DEFAULTS.w),
+      l: pick(p.get("l"), LEN_VALUES, DEFAULTS.l),
+      d: pick(p.get("d"), DIR_VALUES, DEFAULTS.d)
+    };
+  }
+
+  // 選択からURLのクエリを作る（初期値は省く。出欠が未選択なら空）
+  function buildSearch(s) {
+    if (!s.e) return "";
+    const p = new URLSearchParams();
+    p.set("e", s.e);
+    if (s.r !== DEFAULTS.r) p.set("r", s.r);
+    if (s.e === "absent" && s.w !== DEFAULTS.w) p.set("w", s.w);
+    if (s.l !== DEFAULTS.l) p.set("l", s.l);
+    if (s.d !== DEFAULTS.d) p.set("d", s.d);
+    return "?" + p.toString();
+  }
+
+  // 手順の文章（仕様書 3-5）
+  function buildSteps(e) {
+    const first = e === "absent"
+      ? "「御欠席」の「御」を二重線で消し、「欠席」を○で囲みます。"
+      : "「御出席」の「御」を二重線で消し、「出席」を○で囲みます。";
+    return [
+      first,
+      "「御住所」の「御」を消し、ご自身の住所を書きます。",
+      "「御芳名」の「御芳」を消し、ご自身の名前を書きます。",
+      "一言の欄に、お祝いの言葉を書きます（上の候補を参考に）。",
+      "表の宛名の「行」を二重線で消し、「様」と書き直します。"
+    ];
+  }
+
+  /* ===== 状態 ===== */
+  const state = { e: null, r: DEFAULTS.r, w: DEFAULTS.w, l: DEFAULTS.l, d: DEFAULTS.d, order: [], page: 0 };
+
+  /* ===== DOM ===== */
+  const $ = function (id) { return document.getElementById(id); };
+  const placeholder = $("placeholder");
+  const step2 = $("step2");
+  const results = $("results");
+  const cards = $("cards");
+  const live = $("live");
+  const resultsTitle = $("results-title");
+  const figureTitle = $("figure-title");
+  const support = $("support");
+  const hgFront = $("hg-front");
+  const hgBack = $("hg-back");
+  let copyNote = null; // コピー直後の応援案内（同じ画面で1か所だけ）
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function announce(msg) {
+    live.textContent = "";
+    setTimeout(function () { live.textContent = msg; }, 50);
+  }
+
+  function reduceMotion() {
+    return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  }
+
+  function syncGroup(groupId, value) {
+    $(groupId).querySelectorAll("button").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.dataset.key === value));
+    });
+  }
+
+  function syncChips() {
+    syncGroup("chips-attend", state.e);
+    syncGroup("chips-rel", state.r);
+    syncGroup("chips-reason", state.w);
+    syncGroup("chips-len", state.l);
+    syncGroup("chips-dir", state.d);
+  }
+
+  function updateUrl() {
+    try {
+      history.replaceState(null, "", location.pathname + buildSearch(state) + location.hash);
+    } catch (e) { /* file:// などで失敗しても動作は続ける */ }
+  }
+
+  function resetOrder() {
+    state.order = shuffledOrder(POOLS[poolKey(state.e, state.r)].length);
+    state.page = 0;
+  }
+
+  /* ----- 表示 ----- */
+  function renderLayout() {
+    const has = !!state.e;
+    placeholder.hidden = has;
+    step2.hidden = !has;
+    results.hidden = !has;
+    $("field-reason").hidden = state.e !== "absent";
+    $("absent-flow").hidden = state.e !== "absent";
+    $("note-gift").hidden = state.e !== "absent";
+    $("attend-timing").hidden = state.e !== "attend";
+    $("mayoi-line").hidden = state.e !== "absent";
+    $("mayoi-when").hidden = state.e !== "absent";
+    $("unselected-word").textContent = state.e === "absent" ? "欠席なら「御出席」" : "出席なら「御欠席」";
+  }
+
+  function renderCards() {
+    cards.classList.remove("is-refreshed");
+    // 候補を作り直すと、カード内の応援案内も一緒に消える（結果下の応援欄に戻す）
+    cards.textContent = "";
+    support.hidden = !(state.e && DONATE_URL);
+    if (!state.e) return;
+    const list = buildCandidates(state);
+    list.forEach(function (text, i) {
+      const li = document.createElement("li");
+      li.className = "card";
+      const p = document.createElement("p");
+      p.className = "card-text";
+      p.id = "cand-" + i;
+      p.textContent = text;
+      const cnt = document.createElement("p");
+      cnt.className = "card-count";
+      cnt.textContent = charCount(text) + "文字";
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "btn-copy no-print";
+      btn.textContent = "コピー";
+      btn.setAttribute("aria-label", "候補" + (i + 1) + "をコピー");
+      btn.setAttribute("aria-describedby", p.id);
+      const err = document.createElement("p");
+      err.className = "copy-error no-print";
+      err.hidden = true;
+      btn.addEventListener("click", function () { onCopy(text, btn, err, li, p); });
+      li.appendChild(p);
+      li.appendChild(cnt);
+      li.appendChild(btn);
+      li.appendChild(err);
+      cards.appendChild(li);
+    });
+  }
+
+  // 図（仕様書 3-5）：選んだ側の「御」を二重線で消し、○で囲む。選ばなかった側には何も描かない
+  function choiceHtml(key, selected) {
+    const word = key === "attend" ? "出席" : "欠席";
+    if (key !== selected) return '<span class="hg-item">御' + word + "</span>";
+    return '<span class="hg-item"><span class="mk">1</span><span class="strike">御</span><span class="circled">' + word + "</span></span>";
+  }
+  function writeHtml(text) {
+    return '<span class="write"><span class="write-tag">書く</span>' + esc(text) + "</span>";
+  }
+
+  function renderFigure(firstText) {
+    const dirClass = state.d === "yoko" ? "is-yoko" : "is-tate";
+    [hgFront, hgBack].forEach(function (el) {
+      el.classList.remove("is-tate", "is-yoko");
+      el.classList.add(dirClass);
+      el.style.height = "";
+    });
+    if (!state.e) { hgFront.innerHTML = ""; hgBack.innerHTML = ""; return; }
+
+    hgFront.innerHTML =
+      '<p class="hg-row hg-muted">（新郎新婦の住所）</p>' +
+      '<p class="hg-row hg-name"><span class="mk">5</span>（新郎新婦の名前）<span class="nw"><span class="strike">行</span>' + writeHtml("様") + "</span></p>";
+    hgFront.setAttribute("aria-label",
+      "返信はがきの表（宛名面）の図。" + LABEL[state.d] + "。宛名の「行」を二重線で消し、「様」と書き足しています。");
+
+    const sel = state.e;
+    hgBack.innerHTML =
+      '<p class="hg-row hg-choice">' + choiceHtml("attend", sel) + choiceHtml("absent", sel) + "</p>" +
+      '<p class="hg-row"><span class="mk">2</span><span class="strike">御</span>住所 ' + writeHtml("（ご自身の住所）") + "</p>" +
+      '<p class="hg-row"><span class="mk">3</span><span class="strike">御芳</span>名 ' + writeHtml("（ご自身の名前）") + "</p>" +
+      '<div class="hg-msg"><p class="hg-msg-text"><span class="mk">4</span><span class="write-tag">書く</span>' +
+        esc(firstText || "") + "</p></div>";
+    const selWord = sel === "absent" ? "欠席" : "出席";
+    const otherWord = sel === "absent" ? "出席" : "欠席";
+    hgBack.setAttribute("aria-label",
+      "返信はがきの裏（出欠面）の図。" + LABEL[state.d] + "。「御" + selWord + "」の「御」を二重線で消して「" + selWord +
+      "」を丸で囲み、「御" + otherWord + "」には手を付けていません。「御住所」の「御」と「御芳名」の「御芳」を二重線で消し、住所・名前・一言を書き足しています。くわしくは図の下の手順をご覧ください。");
+
+    const steps = $("steps");
+    steps.textContent = "";
+    buildSteps(sel).forEach(function (t, i) {
+      const li = document.createElement("li");
+      const mk = document.createElement("span");
+      mk.className = "mk";
+      mk.setAttribute("aria-hidden", "true");
+      mk.textContent = String(i + 1);
+      const tx = document.createElement("span");
+      tx.textContent = t;
+      li.appendChild(mk);
+      li.appendChild(tx);
+      steps.appendChild(li);
+    });
+    fitTate();
+  }
+
+  // 縦書きの図で、一言が長く列が横にあふれるときは、はがきを縦に伸ばして収める（最大 640px まで）
+  function fitTate() {
+    [hgFront, hgBack].forEach(function (el) {
+      if (!el.classList.contains("is-tate") || !el.offsetParent) return;
+      el.style.height = "";
+      let h = el.getBoundingClientRect().height;
+      while (el.scrollWidth > el.clientWidth + 1 && h < 640) {
+        h += 20;
+        el.style.height = h + "px";
+      }
+    });
+  }
+
+  function firstCandidate() {
+    const t = cards.querySelector(".card-text");
+    return t ? t.textContent : "";
+  }
+
+  function renderAll() {
+    renderLayout();
+    renderCards();
+    renderFigure(firstCandidate());
+  }
+
+  /* ----- スクロール ----- */
+  function scrollToStep2() {
+    const rect = step2.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.top >= 0 && rect.bottom <= vh) return;
+    step2.scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "start" });
+  }
+
+  function scrollToResults() {
+    const rect = resultsTitle.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    const firstBtn = cards.querySelector(".btn-copy");
+    const bottom = firstBtn ? firstBtn.getBoundingClientRect().bottom : rect.bottom;
+    if (rect.top >= 0 && bottom <= vh) return;
+    resultsTitle.scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "start" });
+  }
+
+  // 向きの変更は図だけが変わるので、図が画面外なら図の先頭へ
+  function scrollToFigure() {
+    const rect = figureTitle.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.top >= 0 && rect.top <= vh * 0.6) return;
+    figureTitle.scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "start" });
+  }
+
+  /* ----- 操作 ----- */
+  function selectAttend(key) {
+    state.e = key;
+    resetOrder();
+    syncChips();
+    updateUrl();
+    renderAll();
+    announce(LABEL[key] + "の一言の候補を3件と、書き方の図を表示しました");
+    scrollToStep2();
+  }
+
+  function selectRel(key) {
+    if (state.r === key) return;
+    state.r = key;
+    syncChips();
+    if (!state.e) return;
+    resetOrder();
+    updateUrl();
+    renderAll();
+    announce(LABEL[key] + "向けの候補を表示しました");
+    scrollToResults();
+  }
+
+  // 理由・長さ：並びは保ち、中身だけ更新
+  function selectKeepOrder(field, key) {
+    if (state[field] === key) return;
+    state[field] = key;
+    syncChips();
+    if (!state.e) return;
+    updateUrl();
+    renderAll();
+    announce("「" + LABEL[key] + "」で候補を表示しました");
+    scrollToResults();
+  }
+
+  // 向き：図だけ更新（候補は作り直さないので、コピー直後の案内もそのまま）
+  function selectDir(key) {
+    if (state.d === key) return;
+    state.d = key;
+    syncChips();
+    if (!state.e) return;
+    updateUrl();
+    renderFigure(firstCandidate());
+    announce("図を" + LABEL[key] + "にしました");
+    scrollToFigure();
+  }
+
+  function onMore() {
+    if (!state.e) return;
+    state.page++;
+    if (state.page >= pageCount(state.order.length)) resetOrder();
+    renderCards();
+    renderFigure(firstCandidate());
+    announce("別の候補を3件表示しました");
+    void cards.offsetWidth;
+    cards.classList.add("is-refreshed");
+    scrollToResults();
+  }
+
+  function onJumpFigure(ev) {
+    ev.preventDefault();
+    figureTitle.scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "start" });
+    figureTitle.focus({ preventScroll: true });
+  }
+
+  // 「迷ったとき」の項目へのリンク：折りたたみを開いてから移動
+  function onOpenMayoi(ev) {
+    const id = (ev.currentTarget.getAttribute("href") || "").slice(1);
+    const target = $(id);
+    if (!target) return;
+    ev.preventDefault();
+    $("mayoi").open = true;
+    target.scrollIntoView({ behavior: reduceMotion() ? "auto" : "smooth", block: "start" });
+    if (target.hasAttribute("tabindex")) target.focus({ preventScroll: true });
+  }
+
+  /* ===== コピー直後の応援案内 ===== */
+  function buildCopyNote() {
+    const p = document.createElement("p");
+    p.className = "copy-note no-print";
+    p.appendChild(document.createTextNode("役に立ったら応援していただけるとうれしいです "));
+    const a = document.createElement("a");
+    a.href = DONATE_URL;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.textContent = "応援する";
+    const sr = document.createElement("span");
+    sr.className = "visually-hidden";
+    sr.textContent = "（新しいタブで開きます）";
+    a.appendChild(sr);
+    p.appendChild(a);
+    return p;
+  }
+
+  // コピーしたカードの直下に出す。既にあれば移すだけで増やさない。
+  // 表示中は結果下の応援欄を隠す。フォーカスは動かさず、読み上げ通知も追加しない
+  function showCopyNote(li) {
+    if (!DONATE_URL || !li) return;
+    if (!copyNote) copyNote = buildCopyNote();
+    if (copyNote.parentNode !== li) li.appendChild(copyNote);
+    support.hidden = true;
+  }
+
+  /* ===== コピー ===== */
+  function fallbackCopy(text) {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.top = "0";
+    ta.style.left = "0";
+    ta.style.opacity = "0";
+    ta.style.fontSize = "16px";
+    document.body.appendChild(ta);
+    const prevFocus = document.activeElement;
+    ta.select();
+    ta.setSelectionRange(0, text.length);
+    let ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    if (prevFocus && prevFocus.focus) prevFocus.focus();
+    return ok;
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).then(
+        function () { return true; },
+        function () { return fallbackCopy(text); }
+      );
+    }
+    return Promise.resolve(fallbackCopy(text));
+  }
+
+  // 失敗時は文を選択状態にして、長押しや Ctrl+C でコピーできるようにする
+  function selectTextOf(el) {
+    try {
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    } catch (e) { /* 選択できない環境は案内文のみ */ }
+  }
+
+  function onCopy(text, btn, err, li, textEl) {
+    copyText(text).then(function (ok) {
+      if (ok) {
+        err.hidden = true;
+        btn.textContent = "コピーしました";
+        btn.classList.add("is-done");
+        announce("コピーしました");
+        showCopyNote(li);
+        clearTimeout(btn._t);
+        btn._t = setTimeout(function () {
+          btn.textContent = "コピー";
+          btn.classList.remove("is-done");
+        }, 2000);
+      } else {
+        const msg = "コピーできませんでした。文を長押ししてコピーしてください";
+        err.textContent = msg;
+        err.hidden = false;
+        selectTextOf(textEl);
+        announce(msg);
+      }
+    });
+  }
+
+  function onPrint() {
+    window.print();
+  }
+
+  /* ===== フッター・確認日 ===== */
+  function renderStatic() {
+    if (OPERATOR_URL) { $("operator-link").href = OPERATOR_URL; $("operator-item").hidden = false; }
+    if (PRIVACY_URL) { $("privacy-link").href = PRIVACY_URL; $("privacy-item").hidden = false; }
+    if (DONATE_URL) $("donate-link").href = DONATE_URL;
+    document.querySelectorAll(".js-checked").forEach(function (el) { el.textContent = SOURCES_CHECKED; });
+  }
+
+  /* ===== 初期化 ===== */
+  function bindGroup(groupId, handler) {
+    $(groupId).querySelectorAll("button").forEach(function (b) {
+      b.addEventListener("click", function () { handler(b.dataset.key); });
+    });
+  }
+
+  function init() {
+    renderStatic();
+    bindGroup("chips-attend", selectAttend);
+    bindGroup("chips-rel", selectRel);
+    bindGroup("chips-reason", function (k) { selectKeepOrder("w", k); });
+    bindGroup("chips-len", function (k) { selectKeepOrder("l", k); });
+    bindGroup("chips-dir", selectDir);
+    $("btn-more").addEventListener("click", onMore);
+    $("btn-print").addEventListener("click", onPrint);
+    $("jump-figure").addEventListener("click", onJumpFigure);
+    document.querySelectorAll(".js-open-mayoi").forEach(function (a) {
+      a.addEventListener("click", onOpenMayoi);
+    });
+    let resizeTimer = null;
+    window.addEventListener("resize", function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(fitTate, 150);
+    });
+
+    const sel = parseParams(location.search);
+    state.r = sel.r; state.w = sel.w; state.l = sel.l; state.d = sel.d;
+    if (sel.e) {
+      state.e = sel.e;
+      resetOrder();
+    }
+    // 長さ・向きが初期値以外なら、詳しい設定を開いておく
+    if (state.l !== DEFAULTS.l || state.d !== DEFAULTS.d) $("more").open = true;
+    syncChips();
+    updateUrl();
+    renderAll();
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>
